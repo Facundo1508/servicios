@@ -2,6 +2,7 @@
 namespace App\Controller;
 
 use App\Controller\AppController;
+use Cake\Event\Event;
 
 /**
  * Users Controller
@@ -29,6 +30,70 @@ class UsersController extends AppController
         $this->set('_serialize', ['users']);
     }
 
+    public function isAuthorized($user)
+    {   
+        if (isset($user['rol']) && $user['rol'] === 'usuario')
+        {
+            if(in_array($this->request->action, ['home','logout', 'servicio', 'user']))
+            {
+                return true;
+            }
+        } elseif (!isset($user['rol'])) {
+           if(in_array($this->request->action, ['registro', 'logout', 'login']))
+            {
+                return true;
+            }
+        }
+
+        return parent::isAuthorized($user);
+    }
+    
+    public function beforeFilter(Event $event)
+    {
+        parent::beforeFilter($event);
+        // Allow users to register and logout.
+        // You should not add the "login" action to allow list. Doing so would
+        // cause problems with normal functioning of AuthComponent.
+        $this->Auth->allow(['logout', 'registro', 'add', 'index']);
+    }
+
+    public function login()
+    {   
+        if ($this->request->is('post')) {
+            $user = $this->Auth->identify();
+            if ($user && $user['activo']) {
+                $this->Auth->setUser($user);
+                return $this->redirect($this->Auth->redirectUrl());
+            } elseif ($user && ($user['activo'] == false)) {
+                $this->Flash->error(__('El Usuario aun no está activado.'));   
+            } else {
+                $this->Flash->error(__('Nombre de usuario o contraseña incorrectos'));
+            }
+        }
+    }
+
+    public function logout()
+    {
+        return $this->redirect($this->Auth->logout());
+    }
+    
+    public function registro()
+    {
+        $user = $this->Users->newEntity();
+        if ($this->request->is('post')) {
+            $user = $this->Users->patchEntity($user, $this->request->getData());    
+            $user->role = "alumno";
+            if ($this->Users->save($user)) {
+                $this->Flash->success(__('El usuario ha sido registrado correctamente. Está pendiente de activación.'));
+
+                return $this->redirect(['action' => 'registro']);
+            }
+            $this->Flash->error(__('El usuario no pudo ser registrado. Intente nuevamente'));
+        }
+        $this->set(compact('user'));
+        $this->set('_serialize', ['user']);
+    }
+    
     /**
      * View method
      *

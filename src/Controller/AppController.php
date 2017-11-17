@@ -40,33 +40,57 @@ class AppController extends Controller
     public function initialize()
     {
         parent::initialize();
-
         $this->loadComponent('RequestHandler');
         $this->loadComponent('Flash');
-
-        /*
-         * Enable the following components for recommended CakePHP security settings.
-         * see https://book.cakephp.org/3.0/en/controllers/components/security.html
-         */
-        //$this->loadComponent('Security');
-        //$this->loadComponent('Csrf');
+        $this->loadComponent('Auth', [
+            'authorize' => ['Controller'],
+            'loginRedirect' => [
+                'controller' => 'Servicio',
+                'action' => 'index'
+            ],
+            'logoutRedirect' => [
+                'controller' => 'Users',
+                'action' => 'login',
+                'home'
+            ]
+        ]);
+    }
+    
+        public function isAuthorized($user)
+    {
+        // Admin can access every action
+        if (isset($user['rol']) && $user['rol'] === 'admin') 
+        {
+            return true;
+        }
+        return false;
     }
 
+    public function beforeFilter(Event $event)
+    {   
+        $this->set('current_user', $this->Auth->user());
+    }
+    
     /**
      * Before render callback.
      *
      * @param \Cake\Event\Event $event The beforeRender event.
      * @return \Cake\Http\Response|null|void
      */
-    public function beforeRender(Event $event)
+     public function beforeRender(Event $event)
     {
         // Note: These defaults are just to get started quickly with development
         // and should not be used in production. You should instead set "_serialize"
         // in each action as required.
+        
         if (!array_key_exists('_serialize', $this->viewVars) &&
-            in_array($this->response->type(), ['application/json', 'application/xml'])
-        ) {
+            in_array($this->response->type(), ['application/json', 'application/xml'])) 
+            {
             $this->set('_serialize', true);
         }
+        if (isset($this->Auth) && $this->Auth->user('role'))
+            $this->set("userRole", $this->Auth->user('role'));
     }
+    
+
 }

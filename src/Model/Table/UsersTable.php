@@ -78,7 +78,7 @@ class UsersTable extends Table
             ->notEmpty('apellido');
 
         $validator
-            ->integer('telefono')
+            ->scalar('telefono')
             ->requirePresence('telefono', 'create')
             ->notEmpty('telefono');
 

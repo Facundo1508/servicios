@@ -37,6 +37,9 @@ class AppController extends Controller
      *
      * @return void
      */
+
+    const ROL_ADMIN = 1;
+
     public function initialize()
     {
         parent::initialize();
@@ -45,7 +48,7 @@ class AppController extends Controller
         $this->loadComponent('Auth', [
             'authorize' => ['Controller'],
             'loginRedirect' => [
-                'controller' => 'Servicio',
+                'controller' => 'Servicios',
                 'action' => 'index'
             ],
             'logoutRedirect' => [
@@ -56,10 +59,10 @@ class AppController extends Controller
         ]);
     }
     
-        public function isAuthorized($user)
+    public function isAuthorized($user)
     {
         // Admin can access every action
-        if (isset($user['rol']) && $user['rol'] === 'admin') 
+        if (isset($user['rol_id']) && ($user['rol_id'] == self::ROL_ADMIN)) 
         {
             return true;
         }
@@ -68,7 +71,8 @@ class AppController extends Controller
 
     public function beforeFilter(Event $event)
     {   
-        $this->set('current_user', $this->Auth->user());
+        if (isset($this->Auth))
+            $this->set('current_user', $this->Auth->user());
     }
     
     /**

@@ -11,12 +11,12 @@
         "cakephp/migrations": "@stable",
         "cakephp/plugin-installer": "~1.0",
         "josegonzalez/dotenv": "2.*",
-        "friendsofcake/bootstrap-ui": "^1.2"
+        "friendsofcake/bootstrap-ui": "1.2"
     },
     "require-dev": {
         "psy/psysh": "@stable",
         "cakephp/debug_kit": "~3.2",
-        "cakephp/bake": "~1.1",
+        "cakephp/bake": "1.4.4",
         "cakephp/cakephp-codesniffer": "^3.0"
     },
     "suggest": {
@@ -27,13 +27,15 @@
     },
     "autoload": {
         "psr-4": {
-            "App\\": "src"
+            "App\\": "src",
+            "Coso\\": "./plugins/Coso/src"
         }
     },
     "autoload-dev": {
         "psr-4": {
             "App\\Test\\": "tests",
-            "Cake\\Test\\": "./vendor/cakephp/cakephp/tests"
+            "Cake\\Test\\": "./vendor/cakephp/cakephp/tests",
+            "Coso\\Test\\": "./plugins/Coso/tests"
         }
     },
     "scripts": {

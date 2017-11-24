@@ -223,3 +223,5 @@ Plugin::load('BootstrapUI');
 Plugin::load('BootstrapUI');
 
 Plugin::load('BootstrapUI');
+
+Plugin::load('Coso', ['bootstrap' => false, 'routes' => true]);

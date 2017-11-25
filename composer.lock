@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "content-hash": "40cd748a8aec723b3a423770f92a2024",
+    "content-hash": "e3a846defd9c8084cce6e68d3f90316e",
     "packages": [
         {
             "name": "aura/intl",
@@ -290,16 +290,16 @@
         },
         {
             "name": "friendsofcake/bootstrap-ui",
-            "version": "1.2.1",
+            "version": "1.2.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/FriendsOfCake/bootstrap-ui.git",
-                "reference": "fd02bdcd2bb3f58fa7e68c4d770836e0ac9ac988"
+                "reference": "8b7b95d3f4c753acbb5b9c4984b79953b72eb082"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/FriendsOfCake/bootstrap-ui/zipball/fd02bdcd2bb3f58fa7e68c4d770836e0ac9ac988",
-                "reference": "fd02bdcd2bb3f58fa7e68c4d770836e0ac9ac988",
+                "url": "https://api.github.com/repos/FriendsOfCake/bootstrap-ui/zipball/8b7b95d3f4c753acbb5b9c4984b79953b72eb082",
+                "reference": "8b7b95d3f4c753acbb5b9c4984b79953b72eb082",
                 "shasum": ""
             },
             "require": {
@@ -336,7 +336,7 @@
                 "cakephp",
                 "twitter"
             ],
-            "time": "2017-08-04T00:58:47+00:00"
+            "time": "2017-06-26T02:16:13+00:00"
         },
         {
             "name": "josegonzalez/dotenv",

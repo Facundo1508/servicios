@@ -1,79 +1,103 @@
 <?php
-/**
- * @var \App\View\AppView $this
- * @var \App\Model\Entity\Distrito $distrito
- */
+$this->extend('../Layout/TwitterBootstrap/dashboard');
+
+
+$this->start('tb_actions');
 ?>
-<nav class="large-3 medium-4 columns" id="actions-sidebar">
-    <ul class="side-nav">
-        <li class="heading"><?= __('Actions') ?></li>
-        <li><?= $this->Html->link(__('Edit Distrito'), ['action' => 'edit', $distrito->id]) ?> </li>
-        <li><?= $this->Form->postLink(__('Delete Distrito'), ['action' => 'delete', $distrito->id], ['confirm' => __('Are you sure you want to delete # {0}?', $distrito->id)]) ?> </li>
-        <li><?= $this->Html->link(__('List Distritos'), ['action' => 'index']) ?> </li>
-        <li><?= $this->Html->link(__('New Distrito'), ['action' => 'add']) ?> </li>
-        <li><?= $this->Html->link(__('List Direccions'), ['controller' => 'Direccions', 'action' => 'index']) ?> </li>
-        <li><?= $this->Html->link(__('New Direccion'), ['controller' => 'Direccions', 'action' => 'add']) ?> </li>
-    </ul>
-</nav>
-<div class="distritos view large-9 medium-8 columns content">
-    <h3><?= h($distrito->id) ?></h3>
-    <table class="vertical-table">
+<li><?= $this->Html->link(__('Edit Distrito'), ['action' => 'edit', $distrito->id]) ?> </li>
+<li><?= $this->Form->postLink(__('Delete Distrito'), ['action' => 'delete', $distrito->id], ['confirm' => __('Are you sure you want to delete # {0}?', $distrito->id)]) ?> </li>
+<li><?= $this->Html->link(__('List Distritos'), ['action' => 'index']) ?> </li>
+<li><?= $this->Html->link(__('New Distrito'), ['action' => 'add']) ?> </li>
+<li><?= $this->Html->link(__('List Direccions'), ['controller' => 'Direccions', 'action' => 'index']) ?> </li>
+<li><?= $this->Html->link(__('New Direccion'), ['controller' => 'Direccions', 'action' => 'add']) ?> </li>
+<?php
+$this->end();
+
+$this->start('tb_sidebar');
+?>
+<ul class="nav nav-sidebar">
+<li><?= $this->Html->link(__('Edit Distrito'), ['action' => 'edit', $distrito->id]) ?> </li>
+<li><?= $this->Form->postLink(__('Delete Distrito'), ['action' => 'delete', $distrito->id], ['confirm' => __('Are you sure you want to delete # {0}?', $distrito->id)]) ?> </li>
+<li><?= $this->Html->link(__('List Distritos'), ['action' => 'index']) ?> </li>
+<li><?= $this->Html->link(__('New Distrito'), ['action' => 'add']) ?> </li>
+<li><?= $this->Html->link(__('List Direccions'), ['controller' => 'Direccions', 'action' => 'index']) ?> </li>
+<li><?= $this->Html->link(__('New Direccion'), ['controller' => 'Direccions', 'action' => 'add']) ?> </li>
+</ul>
+<?php
+$this->end();
+?>
+<div class="panel panel-default">
+    <!-- Panel header -->
+    <div class="panel-heading">
+        <h3 class="panel-title"><?= h($distrito->id) ?></h3>
+    </div>
+    <table class="table table-striped" cellpadding="0" cellspacing="0">
         <tr>
-            <th scope="row"><?= __('Id') ?></th>
+            <td><?= __('Id') ?></td>
             <td><?= h($distrito->id) ?></td>
         </tr>
         <tr>
-            <th scope="row"><?= __('Nombre') ?></th>
+            <td><?= __('Nombre') ?></td>
             <td><?= h($distrito->nombre) ?></td>
         </tr>
         <tr>
-            <th scope="row"><?= __('Created') ?></th>
+            <td><?= __('Created') ?></td>
             <td><?= h($distrito->created) ?></td>
         </tr>
         <tr>
-            <th scope="row"><?= __('Modified') ?></th>
+            <td><?= __('Modified') ?></td>
             <td><?= h($distrito->modified) ?></td>
         </tr>
     </table>
-    <div class="related">
-        <h4><?= __('Related Direccions') ?></h4>
-        <?php if (!empty($distrito->direccions)): ?>
-        <table cellpadding="0" cellspacing="0">
-            <tr>
-                <th scope="col"><?= __('Id') ?></th>
-                <th scope="col"><?= __('Provincia Id') ?></th>
-                <th scope="col"><?= __('Departamento Id') ?></th>
-                <th scope="col"><?= __('Distrito Id') ?></th>
-                <th scope="col"><?= __('Calle Id') ?></th>
-                <th scope="col"><?= __('Numero') ?></th>
-                <th scope="col"><?= __('Barrio') ?></th>
-                <th scope="col"><?= __('Manzana') ?></th>
-                <th scope="col"><?= __('Casa') ?></th>
-                <th scope="col"><?= __('Created') ?></th>
-                <th scope="col"><?= __('Modified') ?></th>
-                <th scope="col" class="actions"><?= __('Actions') ?></th>
-            </tr>
-            <?php foreach ($distrito->direccions as $direccions): ?>
-            <tr>
-                <td><?= h($direccions->id) ?></td>
-                <td><?= h($direccions->provincia_id) ?></td>
-                <td><?= h($direccions->departamento_id) ?></td>
-                <td><?= h($direccions->distrito_id) ?></td>
-                <td><?= h($direccions->calle_id) ?></td>
-                <td><?= h($direccions->numero) ?></td>
-                <td><?= h($direccions->barrio) ?></td>
-                <td><?= h($direccions->manzana) ?></td>
-                <td><?= h($direccions->casa) ?></td>
-                <td><?= h($direccions->created) ?></td>
-                <td><?= h($direccions->modified) ?></td>
-                <td class="actions">
-                    <?= $this->Html->link(__('View'), ['controller' => 'Direccions', 'action' => 'view', $direccions->id]) ?>
-                    <?= $this->Html->link(__('Edit'), ['controller' => 'Direccions', 'action' => 'edit', $direccions->id]) ?>
-                    <?= $this->Form->postLink(__('Delete'), ['controller' => 'Direccions', 'action' => 'delete', $direccions->id], ['confirm' => __('Are you sure you want to delete # {0}?', $direccions->id)]) ?>
-                </td>
-            </tr>
-            <?php endforeach; ?>
-        </table>
-        <?php endif; ?>
+</div>
+
+<div class="panel panel-default">
+    <!-- Panel header -->
+    <div class="panel-heading">
+        <h3 class="panel-title"><?= __('Related Direccions') ?></h3>
     </div>
+    <?php if (!empty($distrito->direccions)): ?>
+        <table class="table table-striped">
+            <thead>
+            <tr>
+                <th><?= __('Id') ?></th>
+                <th><?= __('Provincia Id') ?></th>
+                <th><?= __('Departamento Id') ?></th>
+                <th><?= __('Distrito Id') ?></th>
+                <th><?= __('Calle Id') ?></th>
+                <th><?= __('Numero') ?></th>
+                <th><?= __('Barrio') ?></th>
+                <th><?= __('Manzana') ?></th>
+                <th><?= __('Casa') ?></th>
+                <th><?= __('Created') ?></th>
+                <th><?= __('Modified') ?></th>
+                <th class="actions"><?= __('Actions') ?></th>
+            </tr>
+            </thead>
+            <tbody>
+            <?php foreach ($distrito->direccions as $direccions): ?>
+                <tr>
+                    <td><?= h($direccions->id) ?></td>
+                    <td><?= h($direccions->provincia_id) ?></td>
+                    <td><?= h($direccions->departamento_id) ?></td>
+                    <td><?= h($direccions->distrito_id) ?></td>
+                    <td><?= h($direccions->calle_id) ?></td>
+                    <td><?= h($direccions->numero) ?></td>
+                    <td><?= h($direccions->barrio) ?></td>
+                    <td><?= h($direccions->manzana) ?></td>
+                    <td><?= h($direccions->casa) ?></td>
+                    <td><?= h($direccions->created) ?></td>
+                    <td><?= h($direccions->modified) ?></td>
+                    <td class="actions">
+                        <?= $this->Html->link('', ['controller' => 'Direccions', 'action' => 'view', $direccions->id], ['title' => __('View'), 'class' => 'btn btn-default glyphicon glyphicon-eye-open']) ?>
+                        <?= $this->Html->link('', ['controller' => 'Direccions', 'action' => 'edit', $direccions->id], ['title' => __('Edit'), 'class' => 'btn btn-default glyphicon glyphicon-pencil']) ?>
+                        <?= $this->Form->postLink('', ['controller' => 'Direccions', 'action' => 'delete', $direccions->id], ['confirm' => __('Are you sure you want to delete # {0}?', $direccions->id), 'title' => __('Delete'), 'class' => 'btn btn-default glyphicon glyphicon-trash']) ?>
+                    </td>
+                </tr>
+            <?php endforeach; ?>
+            </tbody>
+        </table>
+    <?php else: ?>
+        <p class="panel-body">no related Direccions</p>
+    <?php endif; ?>
 </div>

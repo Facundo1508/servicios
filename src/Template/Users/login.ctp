@@ -11,12 +11,6 @@
         <?= $this->Form->control('username') ?>
         <?= $this->Form->control('password') ?>
     </fieldset>
-    <?= $this->Form->button(__('Login'), ['class' => 'btn btn-success']); ?>
-    <?= $this->Html->link(
-    	__('Registrarse'), 
-    	['controller' => 'Users', 'action' => 'registro'], 
-    	['class' => 'btn btn-default']
-    	) ?>
+    <?= $this->Form->button(__('Login')); ?>
     <?= $this->Form->end() ?>
 </div>
-

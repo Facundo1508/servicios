@@ -3,6 +3,7 @@ namespace App\Controller;
 
 use App\Controller\AppController;
 use Cake\Event\Event;
+use Cake\ORM\TableRegistry;
 
 /**
  * Users Controller
@@ -57,6 +58,13 @@ class UsersController extends AppController
         $this->Auth->allow(['logout', 'registro', 'add', 'index']);
     }
 
+    /**
+     * Login method
+     *
+     * @param string|null $id User id.
+     * @return \Cake\Http\Response|void
+     * @throws \Cake\Datasource\Exception\RecordNotFoundException When record not found.
+     */
     public function login()
     {   
         if ($this->request->is('post')) {
@@ -77,6 +85,13 @@ class UsersController extends AppController
         return $this->redirect($this->Auth->logout());
     }
     
+    /**
+     * Registro method
+     *
+     * @param string|null $id User id.
+     * @return \Cake\Http\Response|void
+     * @throws \Cake\Datasource\Exception\RecordNotFoundException When record not found.
+     */
     public function registro()
     {
         $user = $this->Users->newEntity();
@@ -94,6 +109,35 @@ class UsersController extends AppController
         $this->set('_serialize', ['user']);
     }
     
+    /**
+     * Activar method
+     *
+     * @param string|null $id User id.
+     * @return \Cake\Http\Response|void
+     * @throws \Cake\Datasource\Exception\RecordNotFoundException When record not found.
+     */
+    public function activar($id = null)
+    {
+        $this->set('titulo', 'Activar Usuarios');
+
+        if ($this->request->is('post') && isset($id)) {
+            $usersTable = TableRegistry::get('Users');
+            $user = $usersTable->get($id);
+            $user->activo = 1;
+            if ($usersTable->save($user)) {
+                $this->Flash->success(__('El usuario ha sido activado correctamente.'));
+            } else {
+                $this->Flash->error(__('No se pudo activar el usuario.'));
+            }
+            return $this->redirect(['action' => 'activar']);
+        }
+
+        $this->paginate = ['finder' => 'desactivados'];
+        $users = $this->paginate($this->Users);
+
+        $this->set(compact('users'));
+        //$this->set('_serialize', ['users']);
+    }
     /**
      * View method
      *

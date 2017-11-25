@@ -3,6 +3,9 @@
  * @var \App\View\AppView $this
  */
 ?>
+<?php
+$this->extend('../Layout/TwitterBootstrap/signin');
+?>
 <div class="users form">
 <?= $this->Flash->render('auth') ?>
     <?= $this->Form->create() ?>

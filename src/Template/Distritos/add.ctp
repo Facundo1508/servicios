@@ -4,22 +4,33 @@
  * @var \App\Model\Entity\Distrito $distrito
  */
 ?>
-<nav class="large-3 medium-4 columns" id="actions-sidebar">
-    <ul class="side-nav">
-        <li class="heading"><?= __('Actions') ?></li>
-        <li><?= $this->Html->link(__('List Distritos'), ['action' => 'index']) ?></li>
-        <li><?= $this->Html->link(__('List Direccions'), ['controller' => 'Direccions', 'action' => 'index']) ?></li>
-        <li><?= $this->Html->link(__('New Direccion'), ['controller' => 'Direccions', 'action' => 'add']) ?></li>
-    </ul>
-</nav>
-<div class="distritos form large-9 medium-8 columns content">
-    <?= $this->Form->create($distrito) ?>
-    <fieldset>
-        <legend><?= __('Add Distrito') ?></legend>
-        <?php
-            echo $this->Form->control('nombre');
-        ?>
-    </fieldset>
-    <?= $this->Form->button(__('Submit')) ?>
-    <?= $this->Form->end() ?>
-</div>
+<?php
+$this->extend('../Layout/TwitterBootstrap/dashboard');
+
+$this->start('tb_actions');
+?>
+    <li><?= $this->Html->link(__('List Distritos'), ['action' => 'index']) ?></li>
+    <li><?= $this->Html->link(__('List Direccions'), ['controller' => 'Direccions', 'action' => 'index']) ?> </li>
+    <li><?= $this->Html->link(__('New Direccion'), ['controller' => 'Direccions', 'action' => 'add']) ?> </li>
+<?php
+$this->end();
+
+$this->start('tb_sidebar');
+?>
+<ul class="nav nav-sidebar">
+    <li><?= $this->Html->link(__('List Distritos'), ['action' => 'index']) ?></li>
+    <li><?= $this->Html->link(__('List Direccions'), ['controller' => 'Direccions', 'action' => 'index']) ?> </li>
+    <li><?= $this->Html->link(__('New Direccion'), ['controller' => 'Direccions', 'action' => 'add']) ?> </li>
+</ul>
+<?php
+$this->end();
+?>
+<?= $this->Form->create($distrito); ?>
+<fieldset>
+    <legend><?= __('Add {0}', ['Distrito']) ?></legend>
+    <?php
+    echo $this->Form->control('nombre');
+    ?>
+</fieldset>
+<?= $this->Form->button(__("Add")); ?>
+<?= $this->Form->end() ?>

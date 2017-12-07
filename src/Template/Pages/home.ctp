@@ -19,7 +19,7 @@ use Cake\Datasource\ConnectionManager;
 use Cake\Error\Debugger;
 use Cake\Network\Exception\NotFoundException;
 
-$this->layout = false;
+$this->extend('../Layout/TwitterBootstrap/principal');
 
 if (!Configure::read('debug')) :
     throw new NotFoundException(

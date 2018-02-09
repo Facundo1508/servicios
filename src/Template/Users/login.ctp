@@ -10,10 +10,10 @@ $this->extend('../Layout/TwitterBootstrap/signin');
 <?= $this->Flash->render('auth') ?>
     <?= $this->Form->create() ?>
     <fieldset>
-        <legend><?= __('Please enter your username and password') ?></legend>
-        <?= $this->Form->control('username') ?>
-        <?= $this->Form->control('password') ?>
+        <legend><?= __('Ingrese nombre de usuario y contraseña') ?></legend>
+        <?= $this->Form->control('username', ['label' => 'Nombre de usuario']) ?>
+        <?= $this->Form->control('password', ['label' => 'Contraseña']) ?>
     </fieldset>
-    <?= $this->Form->button(__('Login')); ?>
+    <?= $this->Form->button(__('Ingresar')); ?>
     <?= $this->Form->end() ?>
 </div>

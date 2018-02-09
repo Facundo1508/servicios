@@ -11,9 +11,9 @@ $this->start('tb_actions');
 ?>
     <li><?=
     $this->Form->postLink(
-        __('Delete'),
+        __('Eliminar'),
         ['action' => 'delete', $user->id],
-        ['confirm' => __('Are you sure you want to delete # {0}?', $user->id)]
+        ['confirm' => __('Estas seguro que deseas eliminar # {0}?', $user->username)]
     )
     ?>
     </li>
@@ -32,9 +32,9 @@ $this->start('tb_sidebar');
 <ul class="nav nav-sidebar">
     <li><?=
     $this->Form->postLink(
-        __('Delete'),
+        __('Eliminar'),
         ['action' => 'delete', $user->id],
-        ['confirm' => __('Are you sure you want to delete # {0}?', $user->id)]
+        ['confirm' => __('Estas seguro que deseas eliminar # {0}?', $user->username)]
     )
     ?>
     </li>
@@ -64,5 +64,5 @@ $this->end();
     echo $this->Form->control('genero_id', ['options' => $generos]);
     ?>
 </fieldset>
-<?= $this->Form->button(__("Save")); ?>
+<?= $this->Form->button(__("Guardar")); ?>
 <?= $this->Form->end() ?>

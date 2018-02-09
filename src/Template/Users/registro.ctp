@@ -10,17 +10,16 @@
     <fieldset>
         <legend><?= __('Registro de usuarios') ?></legend>
         <?php
-            echo $this->Form->control('nombre');
-            echo $this->Form->control('apellido');
-            echo $this->Form->control('telefono');
-            echo $this->Form->control('email');
-            echo $this->Form->control('username');
-            echo $this->Form->control('password');
-            echo $this->Form->control('activo');
+            echo $this->Form->control('nombre', ['label' => 'Nombre']);
+            echo $this->Form->control('apellido', ['label' => 'Apellido']);
+            echo $this->Form->control('telefono', ['label' => 'Telefono']);
+            echo $this->Form->control('email', ['label' => 'e-Mail']);
+            echo $this->Form->control('username', ['label' => 'Nombre de usuario']);
+            echo $this->Form->control('password', ['label' => 'Contraseña']);
             echo $this->Form->control('rol_id', ['options' => $rols]);
             echo $this->Form->control('genero_id', ['options' => $generos]);
         ?>
     </fieldset>
-    <?= $this->Form->button(__('Submit')) ?>
+    <?= $this->Form->button(__('Registrarse')) ?>
     <?= $this->Form->end() ?>
 </div>

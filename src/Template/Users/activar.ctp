@@ -16,8 +16,8 @@ $this->start('tb_actions');
 <table class="table table-striped" cellpadding="0" cellspacing="0">
     <thead>
         <tr>           
-            <th><?= $this->Paginator->sort('email'); ?></th>
-            <th><?= $this->Paginator->sort('username'); ?></th>
+            <th><?= $this->Paginator->sort('email', ['label' => 'e-Mail']); ?></th>
+            <th><?= $this->Paginator->sort('username', ['label' => 'Nombre de usuario']); ?></th>
            
             <th class="actions"><?= __('Actions'); ?></th>
         </tr>
@@ -31,7 +31,7 @@ $this->start('tb_actions');
             
             <td class="actions">
                 <?= $this->Form->postLink('', ['action' => 'activar', $user->id], [
-                    'confirm' => __('Está seguro que desea activar el usuario {0}?', $user->nombre),
+                    'confirm' => __('Está seguro que desea activar el usuario {0}?', $user->username),
                     'title' => __('Activar'), 
                     'class' => 'btn btn-default glyphicon glyphicon-ok']) 
                     ?>
@@ -42,9 +42,9 @@ $this->start('tb_actions');
 </table>
 <div class="paginator">
     <ul class="pagination">
-        <?= $this->Paginator->prev('< ' . __('previous')) ?>
+        <?= $this->Paginator->prev('< ' . __('Anterior')) ?>
         <?= $this->Paginator->numbers(['before' => '', 'after' => '']) ?>
-        <?= $this->Paginator->next(__('next') . ' >') ?>
+        <?= $this->Paginator->next(__('Siguiente') . ' >') ?>
     </ul>
     <p><?= $this->Paginator->counter() ?></p>
 </div>

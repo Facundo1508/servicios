@@ -5,7 +5,7 @@ $this->extend('../Layout/TwitterBootstrap/dashboard');
 $this->start('tb_actions');
 ?>
 <li><?= $this->Html->link(__('Edit User'), ['action' => 'edit', $user->id]) ?> </li>
-<li><?= $this->Form->postLink(__('Delete User'), ['action' => 'delete', $user->id], ['confirm' => __('Are you sure you want to delete # {0}?', $user->id)]) ?> </li>
+<li><?= $this->Form->postLink(__('Delete User'), ['action' => 'delete', $user->id], ['confirm' => __('Esta seguro que desea eliminar # {0}?', $user->username)]) ?> </li>
 <li><?= $this->Html->link(__('List Users'), ['action' => 'index']) ?> </li>
 <li><?= $this->Html->link(__('New User'), ['action' => 'add']) ?> </li>
 <li><?= $this->Html->link(__('List Rols'), ['controller' => 'Rols', 'action' => 'index']) ?> </li>
@@ -21,7 +21,7 @@ $this->start('tb_sidebar');
 ?>
 <ul class="nav nav-sidebar">
 <li><?= $this->Html->link(__('Edit User'), ['action' => 'edit', $user->id]) ?> </li>
-<li><?= $this->Form->postLink(__('Delete User'), ['action' => 'delete', $user->id], ['confirm' => __('Are you sure you want to delete # {0}?', $user->id)]) ?> </li>
+<li><?= $this->Form->postLink(__('Delete User'), ['action' => 'delete', $user->id], ['confirm' => __('Esta seguro que desea eliminar # {0}?', $user->username)]) ?> </li>
 <li><?= $this->Html->link(__('List Users'), ['action' => 'index']) ?> </li>
 <li><?= $this->Html->link(__('New User'), ['action' => 'add']) ?> </li>
 <li><?= $this->Html->link(__('List Rols'), ['controller' => 'Rols', 'action' => 'index']) ?> </li>
@@ -57,15 +57,15 @@ $this->end();
             <td><?= h($user->telefono) ?></td>
         </tr>
         <tr>
-            <td><?= __('Email') ?></td>
+            <td><?= __('Email', ['label' => 'e-Mail']) ?></td>
             <td><?= h($user->email) ?></td>
         </tr>
         <tr>
-            <td><?= __('Username') ?></td>
+            <td><?= __('Username', ['label' => 'Nombre de usuario']) ?></td>
             <td><?= h($user->username) ?></td>
         </tr>
         <tr>
-            <td><?= __('Password') ?></td>
+            <td><?= __('Password', ['label' => 'Contraseña']) ?></td>
             <td><?= h($user->password) ?></td>
         </tr>
         <tr>

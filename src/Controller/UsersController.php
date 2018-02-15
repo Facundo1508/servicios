@@ -35,7 +35,7 @@ class UsersController extends AppController
     {   
         if (isset($user['rol']) && $user['rol'] === 'usuario')
         {
-            if(in_array($this->request->action, ['home','logout', 'servicio', 'user']))
+            if(in_array($this->request->action, ['home','logout', 'servicio']))
             {
                 return true;
             }
@@ -55,7 +55,7 @@ class UsersController extends AppController
         // Allow users to register and logout.
         // You should not add the "login" action to allow list. Doing so would
         // cause problems with normal functioning of AuthComponent.
-        $this->Auth->allow(['logout', 'registro', 'add', 'index']);
+        $this->Auth->allow(['logout', 'registro', 'add']);
     }
 
     /**
@@ -97,7 +97,7 @@ class UsersController extends AppController
         $user = $this->Users->newEntity();
         if ($this->request->is('post')) {
             $user = $this->Users->patchEntity($user, $this->request->getData());    
-            $user->role = "alumno";
+            $user->role = "usuario";
             if ($this->Users->save($user)) {
                 $this->Flash->success(__('El usuario ha sido registrado correctamente. Está pendiente de activación.'));
 

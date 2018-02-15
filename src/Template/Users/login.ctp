@@ -15,5 +15,10 @@ $this->extend('../Layout/TwitterBootstrap/signin');
         <?= $this->Form->control('password', ['label' => 'Contraseña']) ?>
     </fieldset>
     <?= $this->Form->button(__('Ingresar')); ?>
+   <?= $this->Html->link(
+    	__('Registrarse'), 
+    	['controller' => 'Users', 'action' => 'registro'], 
+    	['class' => 'btn btn-default']
+    	) ?>
     <?= $this->Form->end() ?>
 </div>

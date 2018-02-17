@@ -5,13 +5,9 @@
         <title>Ar.Servicios</title>
         <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
         <?php
-        echo $this->Html->css('estilos');
-        echo $this->Html->css('font');
-        echo $this->Html->script('/principal/menu');
+        echo $this->Html->css('principal/estilos');
+        echo $this->Html->css('principal/font');
         ?>
-        
-        <link rel="stylesheet" href="css/principal/estilos.css">
-        <link rel="stylesheet" href="css/principal/font.css">
     </head>
     <body>
         <header class="header">
@@ -97,6 +93,6 @@
             </div>
             <p class="copy">&copy; Ar.Servicios - 2018 - Todos los derechos reservados</p>
         </footer>
-        <script src="webroot/principal/js/menu.js"></script>
+        <?php echo $this->Html->script('principal/menu'); ?>
     </body>
 </html>

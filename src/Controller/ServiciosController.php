@@ -13,6 +13,21 @@ use App\Controller\AppController;
 class ServiciosController extends AppController
 {
 
+    public function isAuthorized($user)
+    {
+        if (isset($user['rol_id']) && $user['rol_id'] == parent::ROL_USUARIO)
+        {
+            if(in_array($this->request->action, ['index']))
+            {
+                return true;
+            }
+        } elseif (!isset($user['rol'])) {
+            return false;
+        }
+
+        return parent::isAuthorized($user);
+    }
+
     /**
      * Index method
      *

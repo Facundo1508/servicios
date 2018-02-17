@@ -39,6 +39,7 @@ class AppController extends Controller
      */
 
     const ROL_ADMIN = 1;
+    const ROL_USUARIO = 2;
 
     public function initialize()
     {
@@ -53,8 +54,7 @@ class AppController extends Controller
             ],
             'logoutRedirect' => [
                 'controller' => 'Users',
-                'action' => 'login',
-                'home'
+                'action' => 'login'
             ]
         ]);
     }

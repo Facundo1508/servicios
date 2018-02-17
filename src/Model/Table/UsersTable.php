@@ -122,6 +122,7 @@ class UsersTable extends Table
         return $rules;
     }
 
+    //No andaba el custom finder porque te faltaba la función finder.
     public function findDesactivados(Query $query, array $options)
     {
         return $query->where(['activo' => 0]);

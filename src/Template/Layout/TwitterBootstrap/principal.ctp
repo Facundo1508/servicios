@@ -5,6 +5,7 @@
         <title>Ar.Servicios</title>
         <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
         <?php
+        //Estaban mal referenciados los assets. Explicación en el correo
         echo $this->Html->css('principal/estilos');
         echo $this->Html->css('principal/font');
         ?>

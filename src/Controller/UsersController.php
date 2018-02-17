@@ -105,7 +105,9 @@ class UsersController extends AppController
             }
             $this->Flash->error(__('El usuario no pudo ser registrado. Intente nuevamente'));
         }
-        $this->set(compact('user'));
+        $rols = $this->Users->Rols->find('list', ['limit' => 200]);
+        $generos = $this->Users->Generos->find('list', ['limit' => 200]);
+        $this->set(compact('user', 'rols', 'generos'));
         $this->set('_serialize', ['user']);
     }
     

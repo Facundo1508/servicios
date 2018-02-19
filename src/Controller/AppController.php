@@ -39,6 +39,7 @@ class AppController extends Controller
      */
 
     const ROL_ADMIN = 1;
+    const ROL_USUARIO = 2; //Agregado para comparar usuarios comunes (mediante rol_id)
 
     public function initialize()
     {
@@ -53,8 +54,7 @@ class AppController extends Controller
             ],
             'logoutRedirect' => [
                 'controller' => 'Users',
-                'action' => 'login',
-                'home'
+                'action' => 'login' //borré home porque no se a qué hacía referencia y rompía la redirección
             ]
         ]);
     }

@@ -12,6 +12,28 @@ use App\Controller\AppController;
  */
 class ServiciosController extends AppController
 {
+    /*
+     * FUNCIÓN DE AUTORIZACIÓN
+     *
+     * Tenés que agregarla en cada controlador para indicar a qué acciones tiene acceso
+     * un usuario logueado y a cuales no.
+     */
+    public function isAuthorized($user)
+    {
+        //Valida si el usuario logueado tiene el rol de usuario común.
+        //Constante ROL_USUARIO definida en APP Controller
+        if (isset($user['rol_id']) && $user['rol_id'] == parent::ROL_USUARIO)
+        {
+            if(in_array($this->request->action, ['index']))
+            {
+                return true;
+            }
+        } elseif (!isset($user['rol'])) {
+            return false;
+        }
+
+        return parent::isAuthorized($user);
+    }
 
     /**
      * Index method

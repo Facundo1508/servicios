@@ -18,15 +18,16 @@
                 <nav class="nav" id="nav">
                     <ul class="menu">
                         <li class="menu__item"><a class="menu__link select" href="">Inicio</a></li>
-                        <li class="menu__item"><a class="menu__link" href="">Acceder</a></li>
-                        <li class="menu__item"><a class="menu__link" href="">Registrarse</a></li>
+                        <li class="menu__item"><a class="menu__link" <?= $this->Html->link(__('Acceder'), ['controller' => 'Users', 'action' => 'login'], ['class' => 'btn btn-default']) ?></a></li>
+                        <li class="menu__item"><a class="menu__link" <?= $this->Html->link(__('Registrarse'), ['controller' => 'Users', 'action' => 'registro'], ['class' => 'btn btn-default']) ?></a></li>
+                        <li class="menu__item"><a class="menu__link" <?= $this->Html->link(__('Servicios'), ['controller' => 'Servicios', 'action' => 'index'], ['class' => 'btn btn-default']) ?></a></li>
                         <li class="menu__item"><a class="menu__link" href="">Contacto</a></li>
                     </ul>
                 </nav>
             </div>
         </header>
         <div class="banner">
-            <img src="webroot/img/principal/banner.jpg" alt="" class="banner__img">
+            <img src="webroot/img/principal/serv.jpg" alt="" class="banner__img">
             <div class="contenedor">
                 <div class="h2 banner__titulo">
                     Todos los servicios que siempre buscaste</div>
@@ -37,49 +38,49 @@
             <div>
                 <section class="info">
                     <article class="info__columna">
-                        <img src="webroot/img/principal/img1.jpg" alt="" class="info__img">
-                        <h2 class="info__titulo">Título 1</h2>
-                        <p class="info__txt">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptate ea, reiciendis voluptates, dolorem alias veniam?</p>
+                        <img src="webroot/img/principal/corona.jpg" alt="" class="info__img">
+                        <h2 class="info__titulo">Hazte notar</h2>
+                        <p class="info__txt">¡Conviértete en premium para salir en este apartado!</p>
                     </article>
                     <article class="info__columna">
-                        <img src="webroot/img/principal/img1.jpg" alt="" class="info__img">
-                        <h2 class="info__titulo">Título 2</h2>
-                        <p class="info__txt">Quam architecto ad laboriosam, reiciendis cum qui neque facilis, necessitatibus culpa, nisi fuga? A, aperiam?</p>
+                        <img src="webroot/img/principal/corona.jpg" alt="" class="info__img">
+                        <h2 class="info__titulo">Mantente aquí</h2>
+                        <p class="info__txt">Con el servicio premium captaras las miradas de todos</p>
                     </article>
                     <article class="info__columna">
-                        <img src="webroot/img/principal/img1.jpg" alt="" class="info__img">
-                        <h2 class="info__titulo">Título 3</h2>
-                        <p class="info__txt">Quaerat et dolores dolorum, eligendi officia provident tenetur veritatis, eius recusandae officiis sit, at praesentium?</p>
+                        <img src="webroot/img/principal/corona.jpg" alt="" class="info__img">
+                        <h2 class="info__titulo">Renuévate</h2>
+                        <p class="info__txt">¡Manten tu servicio todos los meses, sé el mas visto!</p>
                     </article>
                 </section>
                 <section class="destacados">
                     <h2 class="section__titulo">Destacados del mes</h2>
                     <div class="destacados__columna">
-                        <img src="webroot/img/principal/img2.jpg" alt="" class="destacados__img">
-                        <div class="destacados__descripcion">
-                            <h3 class="destacados__titulo">VARIOS</h3>
-                            <p class="destacados__txt">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sunt, rem.</p>
-                        </div>
-                    </div>
-                    <div class="destacados__columna">
-                        <img src="webroot/img/principal/img2.jpg" alt="" class="destacados__img">
+                        <img src="webroot/img/principal/motor.jpg" alt="" class="destacados__img">
                         <div class="destacados__descripcion">
                             <h3 class="destacados__titulo">AUTOMOTOR</h3>
-                            <p class="destacados__txt">Ex voluptatum, ullam animi minima non deleniti eos dolorem impedit.</p>
+                            <p class="destacados__txt">¡Tu taller podria estar aquí!.</p>
                         </div>
                     </div>
                     <div class="destacados__columna">
-                        <img src="webroot/img/principal/img2.jpg" alt="" class="destacados__img">
+                        <img src="webroot/img/principal/restaurante.jpg" alt="" class="destacados__img">
+                        <div class="destacados__descripcion">
+                            <h3 class="destacados__titulo">GASTRONOMIA</h3>
+                            <p class="destacados__txt">Demuestra porqué sales aquí</p>
+                        </div>
+                    </div>
+                    <div class="destacados__columna">
+                        <img src="webroot/img/principal/cine.jpg" alt="" class="destacados__img">
                         <div class="destacados__descripcion">
                             <h3 class="destacados__titulo">ENTRETENIMIENTO</h3>
-                            <p class="destacados__txt">Eius suscipit tempora, dicta optio nisi ex minus ipsa rem!</p>
+                            <p class="destacados__txt">¡Mirá que hay de nuevo!</p>
                         </div>
                     </div>
                     <div class="destacados__columna">
-                        <img src="webroot/img/principal/img2.jpg" alt="" class="destacados__img">
+                        <img src="webroot/img/principal/deportes.jpg" alt="" class="destacados__img">
                         <div class="destacados__descripcion">
                             <h3 class="destacados__titulo">DEPORTES</h3>
-                            <p class="destacados__txt">Ipsum hic cum earum sint repellat itaque, omnis laudantium nostrum!</p>
+                            <p class="destacados__txt">Es tu oportunidad de practicar lo que siempre quisiste</p>
                         </div>
                     </div>
                 </section>

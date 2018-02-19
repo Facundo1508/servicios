@@ -97,6 +97,10 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 /*---------------Estilos de info---------------*/
+.info__txt{
+  text-align: center;
+
+}
 .info__columna {
   background: #FBA919;
   color: #fff;

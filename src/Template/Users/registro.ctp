@@ -5,7 +5,9 @@
  */
 
 ?>
-
+<?php
+$this->extend('../Layout/TwitterBootstrap/signin');
+?>
 
 <div class="users form large-9 medium-8 columns content">
     <?= $this->Form->create($user) ?>

@@ -4,24 +4,24 @@ $this->extend('../Layout/TwitterBootstrap/dashboard');
 
 $this->start('tb_actions');
 ?>
-<li><?= $this->Html->link(__('Edit Distrito'), ['action' => 'edit', $distrito->id]) ?> </li>
-<li><?= $this->Form->postLink(__('Delete Distrito'), ['action' => 'delete', $distrito->id], ['confirm' => __('Are you sure you want to delete # {0}?', $distrito->id)]) ?> </li>
-<li><?= $this->Html->link(__('List Distritos'), ['action' => 'index']) ?> </li>
-<li><?= $this->Html->link(__('New Distrito'), ['action' => 'add']) ?> </li>
-<li><?= $this->Html->link(__('List Direccions'), ['controller' => 'Direccions', 'action' => 'index']) ?> </li>
-<li><?= $this->Html->link(__('New Direccion'), ['controller' => 'Direccions', 'action' => 'add']) ?> </li>
+<li><?= $this->Html->link(__('Editar Distrito'), ['action' => 'edit', $distrito->id]) ?> </li>
+<li><?= $this->Form->postLink(__('Borrar Distrito'), ['action' => 'delete', $distrito->id], ['confirm' => __('Are you sure you want to delete # {0}?', $distrito->id)]) ?> </li>
+<li><?= $this->Html->link(__('Lista de Distritos'), ['action' => 'index']) ?> </li>
+<li><?= $this->Html->link(__('Nuevo Distrito'), ['action' => 'add']) ?> </li>
+<li><?= $this->Html->link(__('Lista de Direcciones'), ['controller' => 'Direccions', 'action' => 'index']) ?> </li>
+<li><?= $this->Html->link(__('Nueva Direccion'), ['controller' => 'Direccions', 'action' => 'add']) ?> </li>
 <?php
 $this->end();
 
 $this->start('tb_sidebar');
 ?>
 <ul class="nav nav-sidebar">
-<li><?= $this->Html->link(__('Edit Distrito'), ['action' => 'edit', $distrito->id]) ?> </li>
-<li><?= $this->Form->postLink(__('Delete Distrito'), ['action' => 'delete', $distrito->id], ['confirm' => __('Are you sure you want to delete # {0}?', $distrito->id)]) ?> </li>
-<li><?= $this->Html->link(__('List Distritos'), ['action' => 'index']) ?> </li>
-<li><?= $this->Html->link(__('New Distrito'), ['action' => 'add']) ?> </li>
-<li><?= $this->Html->link(__('List Direccions'), ['controller' => 'Direccions', 'action' => 'index']) ?> </li>
-<li><?= $this->Html->link(__('New Direccion'), ['controller' => 'Direccions', 'action' => 'add']) ?> </li>
+<li><?= $this->Html->link(__('Editar Distrito'), ['action' => 'edit', $distrito->id]) ?> </li>
+<li><?= $this->Form->postLink(__('Borrar Distrito'), ['action' => 'delete', $distrito->id], ['confirm' => __('Are you sure you want to delete # {0}?', $distrito->id)]) ?> </li>
+<li><?= $this->Html->link(__('Lista de Distritos'), ['action' => 'index']) ?> </li>
+<li><?= $this->Html->link(__('Nuevo Distrito'), ['action' => 'add']) ?> </li>
+<li><?= $this->Html->link(__('Lista de Direcciones'), ['controller' => 'Direccions', 'action' => 'index']) ?> </li>
+<li><?= $this->Html->link(__('Nueva Direccion'), ['controller' => 'Direccions', 'action' => 'add']) ?> </li>
 </ul>
 <?php
 $this->end();

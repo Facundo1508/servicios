@@ -97,7 +97,8 @@ class UsersController extends AppController
         $user = $this->Users->newEntity();
         if ($this->request->is('post')) {
             $user = $this->Users->patchEntity($user, $this->request->getData());    
-            $user->role = "usuario";
+            $user->rol_id = parent::ROL_USUARIO;
+            $user->activo = 0;
             if ($this->Users->save($user)) {
                 $this->Flash->success(__('El usuario ha sido registrado correctamente. Está pendiente de activación.'));
 

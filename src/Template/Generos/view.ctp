@@ -4,24 +4,24 @@ $this->extend('../Layout/TwitterBootstrap/dashboard');
 
 $this->start('tb_actions');
 ?>
-<li><?= $this->Html->link(__('Edit Genero'), ['action' => 'edit', $genero->id]) ?> </li>
-<li><?= $this->Form->postLink(__('Delete Genero'), ['action' => 'delete', $genero->id], ['confirm' => __('Are you sure you want to delete # {0}?', $genero->id)]) ?> </li>
-<li><?= $this->Html->link(__('List Generos'), ['action' => 'index']) ?> </li>
-<li><?= $this->Html->link(__('New Genero'), ['action' => 'add']) ?> </li>
-<li><?= $this->Html->link(__('List Users'), ['controller' => 'Users', 'action' => 'index']) ?> </li>
-<li><?= $this->Html->link(__('New User'), ['controller' => 'Users', 'action' => 'add']) ?> </li>
+<li><?= $this->Html->link(__('Editar Genero'), ['action' => 'edit', $genero->id]) ?> </li>
+<li><?= $this->Form->postLink(__('Borrar Genero'), ['action' => 'delete', $genero->id], ['confirm' => __('Are you sure you want to delete # {0}?', $genero->id)]) ?> </li>
+<li><?= $this->Html->link(__('Lista de Generos'), ['action' => 'index']) ?> </li>
+<li><?= $this->Html->link(__('Nuevo Genero'), ['action' => 'add']) ?> </li>
+<li><?= $this->Html->link(__('Lista de Usuarios'), ['controller' => 'Users', 'action' => 'index']) ?> </li>
+<li><?= $this->Html->link(__('Nuevo Usuario'), ['controller' => 'Users', 'action' => 'add']) ?> </li>
 <?php
 $this->end();
 
 $this->start('tb_sidebar');
 ?>
 <ul class="nav nav-sidebar">
-<li><?= $this->Html->link(__('Edit Genero'), ['action' => 'edit', $genero->id]) ?> </li>
-<li><?= $this->Form->postLink(__('Delete Genero'), ['action' => 'delete', $genero->id], ['confirm' => __('Are you sure you want to delete # {0}?', $genero->id)]) ?> </li>
-<li><?= $this->Html->link(__('List Generos'), ['action' => 'index']) ?> </li>
-<li><?= $this->Html->link(__('New Genero'), ['action' => 'add']) ?> </li>
-<li><?= $this->Html->link(__('List Users'), ['controller' => 'Users', 'action' => 'index']) ?> </li>
-<li><?= $this->Html->link(__('New User'), ['controller' => 'Users', 'action' => 'add']) ?> </li>
+<li><?= $this->Html->link(__('Editar Genero'), ['action' => 'edit', $genero->id]) ?> </li>
+<li><?= $this->Form->postLink(__('Borrar Genero'), ['action' => 'delete', $genero->id], ['confirm' => __('Are you sure you want to delete # {0}?', $genero->id)]) ?> </li>
+<li><?= $this->Html->link(__('Lista de Generos'), ['action' => 'index']) ?> </li>
+<li><?= $this->Html->link(__('Nuevo Genero'), ['action' => 'add']) ?> </li>
+<li><?= $this->Html->link(__('Lista de Usuarios'), ['controller' => 'Users', 'action' => 'index']) ?> </li>
+<li><?= $this->Html->link(__('Nuevo Usuario'), ['controller' => 'Users', 'action' => 'add']) ?> </li>
 </ul>
 <?php
 $this->end();

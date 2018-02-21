@@ -17,9 +17,9 @@ $this->start('tb_actions');
     )
     ?>
     </li>
-    <li><?= $this->Html->link(__('List Departamentos'), ['action' => 'index']) ?></li>
-    <li><?= $this->Html->link(__('List Direccions'), ['controller' => 'Direccions', 'action' => 'index']) ?> </li>
-    <li><?= $this->Html->link(__('New Direccion'), ['controller' => 'Direccions', 'action' => 'add']) ?> </li>
+    <li><?= $this->Html->link(__('Lista de Departamentos'), ['action' => 'index']) ?></li>
+    <li><?= $this->Html->link(__('Lista de Direcciones'), ['controller' => 'Direccions', 'action' => 'index']) ?> </li>
+    <li><?= $this->Html->link(__('Nueva Direccion'), ['controller' => 'Direccions', 'action' => 'add']) ?> </li>
 <?php
 $this->end();
 
@@ -48,5 +48,5 @@ $this->end();
     echo $this->Form->control('nombre');
     ?>
 </fieldset>
-<?= $this->Form->button(__("Save")); ?>
+<?= $this->Form->button(__("Guardar")); ?>
 <?= $this->Form->end() ?>

@@ -4,24 +4,24 @@ $this->extend('../Layout/TwitterBootstrap/dashboard');
 
 $this->start('tb_actions');
 ?>
-<li><?= $this->Html->link(__('Edit Rol'), ['action' => 'edit', $rol->id]) ?> </li>
-<li><?= $this->Form->postLink(__('Delete Rol'), ['action' => 'delete', $rol->id], ['confirm' => __('Are you sure you want to delete # {0}?', $rol->id)]) ?> </li>
-<li><?= $this->Html->link(__('List Rols'), ['action' => 'index']) ?> </li>
-<li><?= $this->Html->link(__('New Rol'), ['action' => 'add']) ?> </li>
-<li><?= $this->Html->link(__('List Users'), ['controller' => 'Users', 'action' => 'index']) ?> </li>
-<li><?= $this->Html->link(__('New User'), ['controller' => 'Users', 'action' => 'add']) ?> </li>
+<li><?= $this->Html->link(__('Editar Rol'), ['action' => 'edit', $rol->id]) ?> </li>
+<li><?= $this->Form->postLink(__('Borrar Rol'), ['action' => 'delete', $rol->id], ['confirm' => __('Are you sure you want to delete # {0}?', $rol->id)]) ?> </li>
+<li><?= $this->Html->link(__('Lista de Roles'), ['action' => 'index']) ?> </li>
+<li><?= $this->Html->link(__('Nuevo Rol'), ['action' => 'add']) ?> </li>
+<li><?= $this->Html->link(__('Lista de Usuarios'), ['controller' => 'Users', 'action' => 'index']) ?> </li>
+<li><?= $this->Html->link(__('Nuevo Usuario'), ['controller' => 'Users', 'action' => 'add']) ?> </li>
 <?php
 $this->end();
 
 $this->start('tb_sidebar');
 ?>
 <ul class="nav nav-sidebar">
-<li><?= $this->Html->link(__('Edit Rol'), ['action' => 'edit', $rol->id]) ?> </li>
-<li><?= $this->Form->postLink(__('Delete Rol'), ['action' => 'delete', $rol->id], ['confirm' => __('Are you sure you want to delete # {0}?', $rol->id)]) ?> </li>
-<li><?= $this->Html->link(__('List Rols'), ['action' => 'index']) ?> </li>
-<li><?= $this->Html->link(__('New Rol'), ['action' => 'add']) ?> </li>
-<li><?= $this->Html->link(__('List Users'), ['controller' => 'Users', 'action' => 'index']) ?> </li>
-<li><?= $this->Html->link(__('New User'), ['controller' => 'Users', 'action' => 'add']) ?> </li>
+<li><?= $this->Html->link(__('Editar Rol'), ['action' => 'edit', $rol->id]) ?> </li>
+<li><?= $this->Form->postLink(__('Borrar Rol'), ['action' => 'delete', $rol->id], ['confirm' => __('Are you sure you want to delete # {0}?', $rol->id)]) ?> </li>
+<li><?= $this->Html->link(__('Lista de Roles'), ['action' => 'index']) ?> </li>
+<li><?= $this->Html->link(__('Nuevo Rol'), ['action' => 'add']) ?> </li>
+<li><?= $this->Html->link(__('Lista de Usuarios'), ['controller' => 'Users', 'action' => 'index']) ?> </li>
+<li><?= $this->Html->link(__('Nuevo Usuario'), ['controller' => 'Users', 'action' => 'add']) ?> </li>
 </ul>
 <?php
 $this->end();

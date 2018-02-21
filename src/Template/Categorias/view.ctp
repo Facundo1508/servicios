@@ -4,12 +4,12 @@ $this->extend('../Layout/TwitterBootstrap/dashboard');
 
 $this->start('tb_actions');
 ?>
-<li><?= $this->Html->link(__('Edit Categoria'), ['action' => 'edit', $categoria->id]) ?> </li>
-<li><?= $this->Form->postLink(__('Delete Categoria'), ['action' => 'delete', $categoria->id], ['confirm' => __('Are you sure you want to delete # {0}?', $categoria->id)]) ?> </li>
-<li><?= $this->Html->link(__('List Categorias'), ['action' => 'index']) ?> </li>
-<li><?= $this->Html->link(__('New Categoria'), ['action' => 'add']) ?> </li>
-<li><?= $this->Html->link(__('List Servicios'), ['controller' => 'Servicios', 'action' => 'index']) ?> </li>
-<li><?= $this->Html->link(__('New Servicio'), ['controller' => 'Servicios', 'action' => 'add']) ?> </li>
+<li><?= $this->Html->link(__('Editar Categoria'), ['action' => 'edit', $categoria->id]) ?> </li>
+<li><?= $this->Form->postLink(__('Borrar Categoria'), ['action' => 'delete', $categoria->id], ['confirm' => __('Are you sure you want to delete # {0}?', $categoria->id)]) ?> </li>
+<li><?= $this->Html->link(__('Lista de Categorias'), ['action' => 'index']) ?> </li>
+<li><?= $this->Html->link(__('Nueva Categoria'), ['action' => 'add']) ?> </li>
+<li><?= $this->Html->link(__('Lista de Servicios'), ['controller' => 'Servicios', 'action' => 'index']) ?> </li>
+<li><?= $this->Html->link(__('Nuevo Servicio'), ['controller' => 'Servicios', 'action' => 'add']) ?> </li>
 <?php
 $this->end();
 

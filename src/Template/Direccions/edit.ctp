@@ -17,15 +17,15 @@ $this->start('tb_actions');
     )
     ?>
     </li>
-    <li><?= $this->Html->link(__('List Direccions'), ['action' => 'index']) ?></li>
-    <li><?= $this->Html->link(__('List Provincias'), ['controller' => 'Provincias', 'action' => 'index']) ?> </li>
-    <li><?= $this->Html->link(__('New Provincia'), ['controller' => 'Provincias', 'action' => 'add']) ?> </li>
-    <li><?= $this->Html->link(__('List Departamentos'), ['controller' => 'Departamentos', 'action' => 'index']) ?> </li>
-    <li><?= $this->Html->link(__('New Departamento'), ['controller' => 'Departamentos', 'action' => 'add']) ?> </li>
-    <li><?= $this->Html->link(__('List Distritos'), ['controller' => 'Distritos', 'action' => 'index']) ?> </li>
-    <li><?= $this->Html->link(__('New Distrito'), ['controller' => 'Distritos', 'action' => 'add']) ?> </li>
-    <li><?= $this->Html->link(__('List Calles'), ['controller' => 'Calles', 'action' => 'index']) ?> </li>
-    <li><?= $this->Html->link(__('New Calle'), ['controller' => 'Calles', 'action' => 'add']) ?> </li>
+    <li><?= $this->Html->link(__('Lista de Direcciones'), ['action' => 'index']) ?></li>
+    <li><?= $this->Html->link(__('Lista Provincias'), ['controller' => 'Provincias', 'action' => 'index']) ?> </li>
+    <li><?= $this->Html->link(__('Nueva Provincia'), ['controller' => 'Provincias', 'action' => 'add']) ?> </li>
+    <li><?= $this->Html->link(__('Lista de Departamentos'), ['controller' => 'Departamentos', 'action' => 'index']) ?> </li>
+    <li><?= $this->Html->link(__('Nuevo Departamento'), ['controller' => 'Departamentos', 'action' => 'add']) ?> </li>
+    <li><?= $this->Html->link(__('Lista de Distritos'), ['controller' => 'Distritos', 'action' => 'index']) ?> </li>
+    <li><?= $this->Html->link(__('Nuevo Distrito'), ['controller' => 'Distritos', 'action' => 'add']) ?> </li>
+    <li><?= $this->Html->link(__('Lista de Calles'), ['controller' => 'Calles', 'action' => 'index']) ?> </li>
+    <li><?= $this->Html->link(__('Nueva Calle'), ['controller' => 'Calles', 'action' => 'add']) ?> </li>
 <?php
 $this->end();
 
@@ -40,15 +40,15 @@ $this->start('tb_sidebar');
     )
     ?>
     </li>
-    <li><?= $this->Html->link(__('List Direccions'), ['action' => 'index']) ?></li>
-    <li><?= $this->Html->link(__('List Provincias'), ['controller' => 'Provincias', 'action' => 'index']) ?> </li>
-    <li><?= $this->Html->link(__('New Provincia'), ['controller' => 'Provincias', 'action' => 'add']) ?> </li>
-    <li><?= $this->Html->link(__('List Departamentos'), ['controller' => 'Departamentos', 'action' => 'index']) ?> </li>
-    <li><?= $this->Html->link(__('New Departamento'), ['controller' => 'Departamentos', 'action' => 'add']) ?> </li>
-    <li><?= $this->Html->link(__('List Distritos'), ['controller' => 'Distritos', 'action' => 'index']) ?> </li>
-    <li><?= $this->Html->link(__('New Distrito'), ['controller' => 'Distritos', 'action' => 'add']) ?> </li>
-    <li><?= $this->Html->link(__('List Calles'), ['controller' => 'Calles', 'action' => 'index']) ?> </li>
-    <li><?= $this->Html->link(__('New Calle'), ['controller' => 'Calles', 'action' => 'add']) ?> </li>
+    <li><?= $this->Html->link(__('Lista de Direcciones'), ['action' => 'index']) ?></li>
+    <li><?= $this->Html->link(__('Lista Provincias'), ['controller' => 'Provincias', 'action' => 'index']) ?> </li>
+    <li><?= $this->Html->link(__('Nueva Provincia'), ['controller' => 'Provincias', 'action' => 'add']) ?> </li>
+    <li><?= $this->Html->link(__('Lista Departamentos'), ['controller' => 'Departamentos', 'action' => 'index']) ?> </li>
+    <li><?= $this->Html->link(__('Nueva Departamento'), ['controller' => 'Departamentos', 'action' => 'add']) ?> </li>
+    <li><?= $this->Html->link(__('Lista Distritos'), ['controller' => 'Distritos', 'action' => 'index']) ?> </li>
+    <li><?= $this->Html->link(__('Nuevo Distrito'), ['controller' => 'Distritos', 'action' => 'add']) ?> </li>
+    <li><?= $this->Html->link(__('Lista Calles'), ['controller' => 'Calles', 'action' => 'index']) ?> </li>
+    <li><?= $this->Html->link(__('Nueva Calle'), ['controller' => 'Calles', 'action' => 'add']) ?> </li>
 </ul>
 <?php
 $this->end();
@@ -67,5 +67,5 @@ $this->end();
     echo $this->Form->control('casa');
     ?>
 </fieldset>
-<?= $this->Form->button(__("Save")); ?>
+<?= $this->Form->button(__("Guardar")); ?>
 <?= $this->Form->end() ?>

@@ -4,32 +4,32 @@ $this->extend('../Layout/TwitterBootstrap/dashboard');
 
 $this->start('tb_actions');
 ?>
-<li><?= $this->Html->link(__('Edit User'), ['action' => 'edit', $user->id]) ?> </li>
-<li><?= $this->Form->postLink(__('Delete User'), ['action' => 'delete', $user->id], ['confirm' => __('Esta seguro que desea eliminar # {0}?', $user->username)]) ?> </li>
-<li><?= $this->Html->link(__('List Users'), ['action' => 'index']) ?> </li>
-<li><?= $this->Html->link(__('New User'), ['action' => 'add']) ?> </li>
-<li><?= $this->Html->link(__('List Rols'), ['controller' => 'Rols', 'action' => 'index']) ?> </li>
-<li><?= $this->Html->link(__('New Rol'), ['controller' => 'Rols', 'action' => 'add']) ?> </li>
-<li><?= $this->Html->link(__('List Generos'), ['controller' => 'Generos', 'action' => 'index']) ?> </li>
-<li><?= $this->Html->link(__('New Genero'), ['controller' => 'Generos', 'action' => 'add']) ?> </li>
-<li><?= $this->Html->link(__('List Userservicios'), ['controller' => 'Userservicios', 'action' => 'index']) ?> </li>
-<li><?= $this->Html->link(__('New Userservicio'), ['controller' => 'Userservicios', 'action' => 'add']) ?> </li>
+<li><?= $this->Html->link(__('Editar Usuario'), ['action' => 'edit', $user->id]) ?> </li>
+<li><?= $this->Form->postLink(__('Borrar Usuario'), ['action' => 'delete', $user->id], ['confirm' => __('Esta seguro que desea eliminar # {0}?', $user->username)]) ?> </li>
+<li><?= $this->Html->link(__('Lista de Usuarios'), ['action' => 'index']) ?> </li>
+<li><?= $this->Html->link(__('Nuevo Usuario'), ['action' => 'add']) ?> </li>
+<li><?= $this->Html->link(__('Lista de Roles'), ['controller' => 'Rols', 'action' => 'index']) ?> </li>
+<li><?= $this->Html->link(__('Nuevo Rol'), ['controller' => 'Rols', 'action' => 'add']) ?> </li>
+<li><?= $this->Html->link(__('Lista de Generos'), ['controller' => 'Generos', 'action' => 'index']) ?> </li>
+<li><?= $this->Html->link(__('Nuevo Genero'), ['controller' => 'Generos', 'action' => 'add']) ?> </li>
+<li><?= $this->Html->link(__('Lista de Userservicios'), ['controller' => 'Userservicios', 'action' => 'index']) ?> </li>
+
 <?php
 $this->end();
 
 $this->start('tb_sidebar');
 ?>
 <ul class="nav nav-sidebar">
-<li><?= $this->Html->link(__('Edit User'), ['action' => 'edit', $user->id]) ?> </li>
-<li><?= $this->Form->postLink(__('Delete User'), ['action' => 'delete', $user->id], ['confirm' => __('Esta seguro que desea eliminar # {0}?', $user->username)]) ?> </li>
-<li><?= $this->Html->link(__('List Users'), ['action' => 'index']) ?> </li>
-<li><?= $this->Html->link(__('New User'), ['action' => 'add']) ?> </li>
-<li><?= $this->Html->link(__('List Rols'), ['controller' => 'Rols', 'action' => 'index']) ?> </li>
-<li><?= $this->Html->link(__('New Rol'), ['controller' => 'Rols', 'action' => 'add']) ?> </li>
-<li><?= $this->Html->link(__('List Generos'), ['controller' => 'Generos', 'action' => 'index']) ?> </li>
-<li><?= $this->Html->link(__('New Genero'), ['controller' => 'Generos', 'action' => 'add']) ?> </li>
-<li><?= $this->Html->link(__('List Userservicios'), ['controller' => 'Userservicios', 'action' => 'index']) ?> </li>
-<li><?= $this->Html->link(__('New Userservicio'), ['controller' => 'Userservicios', 'action' => 'add']) ?> </li>
+<li><?= $this->Html->link(__('Editar Usuario'), ['action' => 'edit', $user->id]) ?> </li>
+<li><?= $this->Form->postLink(__('Borrar Usuario'), ['action' => 'delete', $user->id], ['confirm' => __('Esta seguro que desea eliminar # {0}?', $user->username)]) ?> </li>
+<li><?= $this->Html->link(__('Lista de Usuarios'), ['action' => 'index']) ?> </li>
+<li><?= $this->Html->link(__('Nuevo Usuario'), ['action' => 'add']) ?> </li>
+<li><?= $this->Html->link(__('Lista de Roles'), ['controller' => 'Rols', 'action' => 'index']) ?> </li>
+<li><?= $this->Html->link(__('Nuevo Rol'), ['controller' => 'Rols', 'action' => 'add']) ?> </li>
+<li><?= $this->Html->link(__('Lista de Generos'), ['controller' => 'Generos', 'action' => 'index']) ?> </li>
+<li><?= $this->Html->link(__('Nuevo Genero'), ['controller' => 'Generos', 'action' => 'add']) ?> </li>
+<li><?= $this->Html->link(__('Lista de Userservicios'), ['controller' => 'Userservicios', 'action' => 'index']) ?> </li>
+
 </ul>
 <?php
 $this->end();

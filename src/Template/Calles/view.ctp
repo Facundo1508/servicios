@@ -4,24 +4,24 @@ $this->extend('../Layout/TwitterBootstrap/dashboard');
 
 $this->start('tb_actions');
 ?>
-<li><?= $this->Html->link(__('Edit Calle'), ['action' => 'edit', $calle->id]) ?> </li>
-<li><?= $this->Form->postLink(__('Delete Calle'), ['action' => 'delete', $calle->id], ['confirm' => __('Are you sure you want to delete # {0}?', $calle->id)]) ?> </li>
-<li><?= $this->Html->link(__('List Calles'), ['action' => 'index']) ?> </li>
-<li><?= $this->Html->link(__('New Calle'), ['action' => 'add']) ?> </li>
-<li><?= $this->Html->link(__('List Direccions'), ['controller' => 'Direccions', 'action' => 'index']) ?> </li>
-<li><?= $this->Html->link(__('New Direccion'), ['controller' => 'Direccions', 'action' => 'add']) ?> </li>
+<li><?= $this->Html->link(__('Editar Calle'), ['action' => 'edit', $calle->id]) ?> </li>
+<li><?= $this->Form->postLink(__('Borrar Calle'), ['action' => 'delete', $calle->id], ['confirm' => __('Are you sure you want to delete # {0}?', $calle->id)]) ?> </li>
+<li><?= $this->Html->link(__('Lista de Calles'), ['action' => 'index']) ?> </li>
+<li><?= $this->Html->link(__('Nueva Calle'), ['action' => 'add']) ?> </li>
+<li><?= $this->Html->link(__('Lista de Direcciones'), ['controller' => 'Direccions', 'action' => 'index']) ?> </li>
+<li><?= $this->Html->link(__('Nueva Direccion'), ['controller' => 'Direccions', 'action' => 'add']) ?> </li>
 <?php
 $this->end();
 
 $this->start('tb_sidebar');
 ?>
 <ul class="nav nav-sidebar">
-<li><?= $this->Html->link(__('Edit Calle'), ['action' => 'edit', $calle->id]) ?> </li>
-<li><?= $this->Form->postLink(__('Delete Calle'), ['action' => 'delete', $calle->id], ['confirm' => __('Are you sure you want to delete # {0}?', $calle->id)]) ?> </li>
-<li><?= $this->Html->link(__('List Calles'), ['action' => 'index']) ?> </li>
-<li><?= $this->Html->link(__('New Calle'), ['action' => 'add']) ?> </li>
-<li><?= $this->Html->link(__('List Direccions'), ['controller' => 'Direccions', 'action' => 'index']) ?> </li>
-<li><?= $this->Html->link(__('New Direccion'), ['controller' => 'Direccions', 'action' => 'add']) ?> </li>
+<li><?= $this->Html->link(__('Editar Calle'), ['action' => 'edit', $calle->id]) ?> </li>
+<li><?= $this->Form->postLink(__('Borrar Calle'), ['action' => 'delete', $calle->id], ['confirm' => __('Are you sure you want to delete # {0}?', $calle->id)]) ?> </li>
+<li><?= $this->Html->link(__('Lista de Calles'), ['action' => 'index']) ?> </li>
+<li><?= $this->Html->link(__('Nueva Calle'), ['action' => 'add']) ?> </li>
+<li><?= $this->Html->link(__('Lista de Direcciones'), ['controller' => 'Direccions', 'action' => 'index']) ?> </li>
+<li><?= $this->Html->link(__('Nueva Direccion'), ['controller' => 'Direccions', 'action' => 'add']) ?> </li>
 </ul>
 <?php
 $this->end();

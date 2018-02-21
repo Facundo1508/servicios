@@ -4,28 +4,28 @@ $this->extend('../Layout/TwitterBootstrap/dashboard');
 
 $this->start('tb_actions');
 ?>
-<li><?= $this->Html->link(__('Edit Servicio'), ['action' => 'edit', $servicio->id]) ?> </li>
-<li><?= $this->Form->postLink(__('Delete Servicio'), ['action' => 'delete', $servicio->id], ['confirm' => __('Are you sure you want to delete # {0}?', $servicio->id)]) ?> </li>
-<li><?= $this->Html->link(__('List Servicios'), ['action' => 'index']) ?> </li>
-<li><?= $this->Html->link(__('New Servicio'), ['action' => 'add']) ?> </li>
-<li><?= $this->Html->link(__('List Categorias'), ['controller' => 'Categorias', 'action' => 'index']) ?> </li>
-<li><?= $this->Html->link(__('New Categoria'), ['controller' => 'Categorias', 'action' => 'add']) ?> </li>
-<li><?= $this->Html->link(__('List Userservicios'), ['controller' => 'Userservicios', 'action' => 'index']) ?> </li>
-<li><?= $this->Html->link(__('New Userservicio'), ['controller' => 'Userservicios', 'action' => 'add']) ?> </li>
+<li><?= $this->Html->link(__('Editar Servicio'), ['action' => 'edit', $servicio->id]) ?> </li>
+<li><?= $this->Form->postLink(__('Borrar Servicio'), ['action' => 'delete', $servicio->id], ['confirm' => __('Are you sure you want to delete # {0}?', $servicio->id)]) ?> </li>
+<li><?= $this->Html->link(__('Lista de Servicios'), ['action' => 'index']) ?> </li>
+<li><?= $this->Html->link(__('Nuevo Servicio'), ['action' => 'add']) ?> </li>
+<li><?= $this->Html->link(__('Lista de Categorias'), ['controller' => 'Categorias', 'action' => 'index']) ?> </li>
+<li><?= $this->Html->link(__('Nueva Categoria'), ['controller' => 'Categorias', 'action' => 'add']) ?> </li>
+<li><?= $this->Html->link(__('Lista Userservicios'), ['controller' => 'Userservicios', 'action' => 'index']) ?> </li>
+
 <?php
 $this->end();
 
 $this->start('tb_sidebar');
 ?>
 <ul class="nav nav-sidebar">
-<li><?= $this->Html->link(__('Edit Servicio'), ['action' => 'edit', $servicio->id]) ?> </li>
-<li><?= $this->Form->postLink(__('Delete Servicio'), ['action' => 'delete', $servicio->id], ['confirm' => __('Are you sure you want to delete # {0}?', $servicio->id)]) ?> </li>
-<li><?= $this->Html->link(__('List Servicios'), ['action' => 'index']) ?> </li>
-<li><?= $this->Html->link(__('New Servicio'), ['action' => 'add']) ?> </li>
-<li><?= $this->Html->link(__('List Categorias'), ['controller' => 'Categorias', 'action' => 'index']) ?> </li>
-<li><?= $this->Html->link(__('New Categoria'), ['controller' => 'Categorias', 'action' => 'add']) ?> </li>
-<li><?= $this->Html->link(__('List Userservicios'), ['controller' => 'Userservicios', 'action' => 'index']) ?> </li>
-<li><?= $this->Html->link(__('New Userservicio'), ['controller' => 'Userservicios', 'action' => 'add']) ?> </li>
+<li><?= $this->Html->link(__('Editar Servicio'), ['action' => 'edit', $servicio->id]) ?> </li>
+<li><?= $this->Form->postLink(__('Borrar Servicio'), ['action' => 'delete', $servicio->id], ['confirm' => __('Are you sure you want to delete # {0}?', $servicio->id)]) ?> </li>
+<li><?= $this->Html->link(__('Lista de Servicios'), ['action' => 'index']) ?> </li>
+<li><?= $this->Html->link(__('Nuevo Servicio'), ['action' => 'add']) ?> </li>
+<li><?= $this->Html->link(__('Lista de Categorias'), ['controller' => 'Categorias', 'action' => 'index']) ?> </li>
+<li><?= $this->Html->link(__('Nueva Categoria'), ['controller' => 'Categorias', 'action' => 'add']) ?> </li>
+<li><?= $this->Html->link(__('Lista de Userservicios'), ['controller' => 'Userservicios', 'action' => 'index']) ?> </li>
+
 </ul>
 <?php
 $this->end();

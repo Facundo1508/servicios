@@ -4,24 +4,24 @@ $this->extend('../Layout/TwitterBootstrap/dashboard');
 
 $this->start('tb_actions');
 ?>
-<li><?= $this->Html->link(__('Edit Provincia'), ['action' => 'edit', $provincia->id]) ?> </li>
-<li><?= $this->Form->postLink(__('Delete Provincia'), ['action' => 'delete', $provincia->id], ['confirm' => __('Are you sure you want to delete # {0}?', $provincia->id)]) ?> </li>
-<li><?= $this->Html->link(__('List Provincias'), ['action' => 'index']) ?> </li>
-<li><?= $this->Html->link(__('New Provincia'), ['action' => 'add']) ?> </li>
-<li><?= $this->Html->link(__('List Direccions'), ['controller' => 'Direccions', 'action' => 'index']) ?> </li>
-<li><?= $this->Html->link(__('New Direccion'), ['controller' => 'Direccions', 'action' => 'add']) ?> </li>
+<li><?= $this->Html->link(__('Editar Provincia'), ['action' => 'edit', $provincia->id]) ?> </li>
+<li><?= $this->Form->postLink(__('Borrar Provincia'), ['action' => 'delete', $provincia->id], ['confirm' => __('Are you sure you want to delete # {0}?', $provincia->id)]) ?> </li>
+<li><?= $this->Html->link(__('Lista de Provincias'), ['action' => 'index']) ?> </li>
+<li><?= $this->Html->link(__('Nueva Provincia'), ['action' => 'add']) ?> </li>
+<li><?= $this->Html->link(__('Lista de Direcciones'), ['controller' => 'Direccions', 'action' => 'index']) ?> </li>
+<li><?= $this->Html->link(__('Nueva Direccion'), ['controller' => 'Direccions', 'action' => 'add']) ?> </li>
 <?php
 $this->end();
 
 $this->start('tb_sidebar');
 ?>
 <ul class="nav nav-sidebar">
-<li><?= $this->Html->link(__('Edit Provincia'), ['action' => 'edit', $provincia->id]) ?> </li>
-<li><?= $this->Form->postLink(__('Delete Provincia'), ['action' => 'delete', $provincia->id], ['confirm' => __('Are you sure you want to delete # {0}?', $provincia->id)]) ?> </li>
-<li><?= $this->Html->link(__('List Provincias'), ['action' => 'index']) ?> </li>
-<li><?= $this->Html->link(__('New Provincia'), ['action' => 'add']) ?> </li>
-<li><?= $this->Html->link(__('List Direccions'), ['controller' => 'Direccions', 'action' => 'index']) ?> </li>
-<li><?= $this->Html->link(__('New Direccion'), ['controller' => 'Direccions', 'action' => 'add']) ?> </li>
+<li><?= $this->Html->link(__('Editar Provincia'), ['action' => 'edit', $provincia->id]) ?> </li>
+<li><?= $this->Form->postLink(__('Borrar Provincia'), ['action' => 'delete', $provincia->id], ['confirm' => __('Are you sure you want to delete # {0}?', $provincia->id)]) ?> </li>
+<li><?= $this->Html->link(__('Lista de Provincias'), ['action' => 'index']) ?> </li>
+<li><?= $this->Html->link(__('Nueva Provincia'), ['action' => 'add']) ?> </li>
+<li><?= $this->Html->link(__('Lista de Direccions'), ['controller' => 'Direccions', 'action' => 'index']) ?> </li>
+<li><?= $this->Html->link(__('Nueva Direccion'), ['controller' => 'Direccions', 'action' => 'add']) ?> </li>
 </ul>
 <?php
 $this->end();

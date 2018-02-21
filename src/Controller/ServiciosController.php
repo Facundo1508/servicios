@@ -28,10 +28,9 @@ class ServiciosController extends AppController
             {
                 return true;
             }
-        } elseif (!isset($user['rol'])) {
+        } elseif (!isset($user['rol_id'])) {         
             return false;
         }
-
         return parent::isAuthorized($user);
     }
 

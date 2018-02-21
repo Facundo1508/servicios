@@ -4,24 +4,24 @@ $this->extend('../Layout/TwitterBootstrap/dashboard');
 
 $this->start('tb_actions');
 ?>
-<li><?= $this->Html->link(__('Edit Departamento'), ['action' => 'edit', $departamento->id]) ?> </li>
-<li><?= $this->Form->postLink(__('Delete Departamento'), ['action' => 'delete', $departamento->id], ['confirm' => __('Are you sure you want to delete # {0}?', $departamento->id)]) ?> </li>
-<li><?= $this->Html->link(__('List Departamentos'), ['action' => 'index']) ?> </li>
-<li><?= $this->Html->link(__('New Departamento'), ['action' => 'add']) ?> </li>
-<li><?= $this->Html->link(__('List Direccions'), ['controller' => 'Direccions', 'action' => 'index']) ?> </li>
-<li><?= $this->Html->link(__('New Direccion'), ['controller' => 'Direccions', 'action' => 'add']) ?> </li>
+<li><?= $this->Html->link(__('Editar Departamento'), ['action' => 'edit', $departamento->id]) ?> </li>
+<li><?= $this->Form->postLink(__('Borrar Departamento'), ['action' => 'delete', $departamento->id], ['confirm' => __('Are you sure you want to delete # {0}?', $departamento->id)]) ?> </li>
+<li><?= $this->Html->link(__('Lista de Departamentos'), ['action' => 'index']) ?> </li>
+<li><?= $this->Html->link(__('Nuevo Departamento'), ['action' => 'add']) ?> </li>
+<li><?= $this->Html->link(__('Lista de Direcciones'), ['controller' => 'Direccions', 'action' => 'index']) ?> </li>
+<li><?= $this->Html->link(__('Nueva Direccion'), ['controller' => 'Direccions', 'action' => 'add']) ?> </li>
 <?php
 $this->end();
 
 $this->start('tb_sidebar');
 ?>
 <ul class="nav nav-sidebar">
-<li><?= $this->Html->link(__('Edit Departamento'), ['action' => 'edit', $departamento->id]) ?> </li>
-<li><?= $this->Form->postLink(__('Delete Departamento'), ['action' => 'delete', $departamento->id], ['confirm' => __('Are you sure you want to delete # {0}?', $departamento->id)]) ?> </li>
-<li><?= $this->Html->link(__('List Departamentos'), ['action' => 'index']) ?> </li>
-<li><?= $this->Html->link(__('New Departamento'), ['action' => 'add']) ?> </li>
-<li><?= $this->Html->link(__('List Direccions'), ['controller' => 'Direccions', 'action' => 'index']) ?> </li>
-<li><?= $this->Html->link(__('New Direccion'), ['controller' => 'Direccions', 'action' => 'add']) ?> </li>
+<li><?= $this->Html->link(__('Editar Departamento'), ['action' => 'edit', $departamento->id]) ?> </li>
+<li><?= $this->Form->postLink(__('Borrar Departamento'), ['action' => 'delete', $departamento->id], ['confirm' => __('Are you sure you want to delete # {0}?', $departamento->id)]) ?> </li>
+<li><?= $this->Html->link(__('Lista de Departamentos'), ['action' => 'index']) ?> </li>
+<li><?= $this->Html->link(__('Nuevo Departamento'), ['action' => 'add']) ?> </li>
+<li><?= $this->Html->link(__('Lista de Direcciones'), ['controller' => 'Direccions', 'action' => 'index']) ?> </li>
+<li><?= $this->Html->link(__('Nueva Direccion'), ['controller' => 'Direccions', 'action' => 'add']) ?> </li>
 </ul>
 <?php
 $this->end();

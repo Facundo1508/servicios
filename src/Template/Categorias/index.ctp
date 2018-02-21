@@ -3,9 +3,9 @@
 $this->extend('../Layout/TwitterBootstrap/dashboard');
 $this->start('tb_actions');
 ?>
-    <li><?= $this->Html->link(__('New Categoria'), ['action' => 'add']); ?></li>
-    <li><?= $this->Html->link(__('List Servicios'), ['controller' => 'Servicios', 'action' => 'index']); ?></li>
-    <li><?= $this->Html->link(__('New Servicio'), ['controller' => 'Servicios', 'action' => 'add']); ?></li>
+    <li><?= $this->Html->link(__('Nueva Categoria'), ['action' => 'add']); ?></li>
+    <li><?= $this->Html->link(__('Lista de Servicios'), ['controller' => 'Servicios', 'action' => 'index']); ?></li>
+    <li><?= $this->Html->link(__('Nuevo Servicio'), ['controller' => 'Servicios', 'action' => 'add']); ?></li>
 <?php $this->end(); ?>
 <?php $this->assign('tb_sidebar', '<ul class="nav nav-sidebar">' . $this->fetch('tb_actions') . '</ul>'); ?>
 

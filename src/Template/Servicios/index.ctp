@@ -3,11 +3,22 @@
 $this->extend('../Layout/TwitterBootstrap/dashboard');
 $this->start('tb_actions');
 ?>
-    <li><?= $this->Html->link(__('New Servicio'), ['action' => 'add']); ?></li>
-    <li><?= $this->Html->link(__('List Categorias'), ['controller' => 'Categorias', 'action' => 'index']); ?></li>
-    <li><?= $this->Html->link(__('New Categoria'), ['controller' => 'Categorias', 'action' => 'add']); ?></li>
-    <li><?= $this->Html->link(__('List Userservicios'), ['controller' => 'Userservicios', 'action' => 'index']); ?></li>
-    <li><?= $this->Html->link(__('New Userservicio'), ['controller' => 'Userservicios', 'action' => 'add']); ?></li>
+
+
+
+if(isset($user['rol_id']) && $user['rol_id'] == parent::ROL_ADMIN){
+      
+      <li><?=$this->Html->link(__('Nuevo Servicio'), ['action' => 'add']);?></li>
+      <li><?=$this->Html->link(__('Lista de Categorias'), ['controller' => 'Categorias', 'action' => 'index']);?></li>
+      <li><?=$this->Html->link(__('Nueva Categoria'), ['controller' => 'Categorias', 'action' => 'add']);?></li>
+      <li><?=$this->Html->link(__('Lista de Userservicio'), ['controller' => 'Userservicios', 'action' => 'index']);?></li>
+} elseif (isset($user['rol_id']) && $user['rol_id'] == parent::ROL_USUARIO) {
+      
+    <li><?=$this->Html->link(__('Nuevo Servicio'), ['action' => 'add']);?></li>
+}
+
+
+    
 <?php $this->end(); ?>
 <?php $this->assign('tb_sidebar', '<ul class="nav nav-sidebar">' . $this->fetch('tb_actions') . '</ul>'); ?>
 

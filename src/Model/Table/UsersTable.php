@@ -11,6 +11,7 @@ use Cake\Validation\Validator;
  *
  * @property \App\Model\Table\RolsTable|\Cake\ORM\Association\BelongsTo $Rols
  * @property \App\Model\Table\GenerosTable|\Cake\ORM\Association\BelongsTo $Generos
+ * @property |\Cake\ORM\Association\BelongsTo $Direccions
  * @property \App\Model\Table\UserserviciosTable|\Cake\ORM\Association\HasMany $Userservicios
  *
  * @method \App\Model\Entity\User get($primaryKey, $options = [])
@@ -48,6 +49,10 @@ class UsersTable extends Table
         ]);
         $this->belongsTo('Generos', [
             'foreignKey' => 'genero_id',
+            'joinType' => 'INNER'
+        ]);
+        $this->belongsTo('Direccions', [
+            'foreignKey' => 'direccion_id',
             'joinType' => 'INNER'
         ]);
         $this->hasMany('Userservicios', [
@@ -118,13 +123,8 @@ class UsersTable extends Table
         $rules->add($rules->isUnique(['username']));
         $rules->add($rules->existsIn(['rol_id'], 'Rols'));
         $rules->add($rules->existsIn(['genero_id'], 'Generos'));
+        $rules->add($rules->existsIn(['direccion_id'], 'Direccions'));
 
         return $rules;
-    }
-
-    //No andaba el custom finder porque te faltaba la función finder.
-    public function findDesactivados(Query $query, array $options)
-    {
-        return $query->where(['activo' => 0]);
     }
 }

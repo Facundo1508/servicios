@@ -27,7 +27,9 @@ class UsersTableTest extends TestCase
         'app.users',
         'app.rols',
         'app.generos',
-        'app.userservicios'
+        'app.userservicios',
+        'app.servicios',
+        'app.categorias'
     ];
 
     /**
@@ -80,6 +82,16 @@ class UsersTableTest extends TestCase
      * @return void
      */
     public function testBuildRules()
+    {
+        $this->markTestIncomplete('Not implemented yet.');
+    }
+
+    /**
+     * Test findDesactivados method
+     *
+     * @return void
+     */
+    public function testFindDesactivados()
     {
         $this->markTestIncomplete('Not implemented yet.');
     }

@@ -177,6 +177,7 @@ class UsersController extends AppController
         }
         $rols = $this->Users->Rols->find('list', ['limit' => 200]);
         $generos = $this->Users->Generos->find('list', ['limit' => 200]);
+        $direccions = $this->Users->Direccions->find('list', ['limit' => 200]);
         $this->set(compact('user', 'rols', 'generos'));
         $this->set('_serialize', ['user']);
     }
@@ -204,6 +205,7 @@ class UsersController extends AppController
         }
         $rols = $this->Users->Rols->find('list', ['limit' => 200]);
         $generos = $this->Users->Generos->find('list', ['limit' => 200]);
+        $direccions = $this->Users->Direccions->find('list', ['limit' => 200]);
         $this->set(compact('user', 'rols', 'generos'));
         $this->set('_serialize', ['user']);
     }

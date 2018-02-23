@@ -21,7 +21,7 @@
                         <li class="menu__item"><a class="menu__link" <?= $this->Html->link(__('Acceder'), ['controller' => 'Users', 'action' => 'login'], ['class' => 'btn btn-default']) ?></a></li>
                         <li class="menu__item"><a class="menu__link" <?= $this->Html->link(__('Registrarse'), ['controller' => 'Users', 'action' => 'registro'], ['class' => 'btn btn-default']) ?></a></li>
                         <li class="menu__item"><a class="menu__link" <?= $this->Html->link(__('Servicios'), ['controller' => 'Servicios', 'action' => 'index'], ['class' => 'btn btn-default']) ?></a></li>
-                        <li class="menu__item"><a class="menu__link" href="">Contacto</a></li>
+                        <li class="menu__item"><a class="menu__link" <?= $this->Html->link(__('Contacto'), ['controller' => 'Pages', 'action' => 'display', 'contacto'], ['class' => 'btn btn-default']) ?></a></li>
                     </ul>
                 </nav>
             </div>

@@ -26,3 +26,11 @@ $this->extend('../Layout/TwitterBootstrap/signin');
     <?= $this->Form->button(__('Registrarse')) ?>
     <?= $this->Form->end() ?>
 </div>
+<div class="userform">
+    <?= $this->Html->link(
+    	__(' Volver a la página principal '), 
+    	['controller' => 'Pages', 'action' => 'display', 'home'], 
+    	['class' => 'btn btn-primary']
+    	) ?>
+    <?= $this->Form->end() ?>
+</div>

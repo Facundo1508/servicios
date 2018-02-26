@@ -49,7 +49,22 @@ class ServiciosController extends AppController
         $this->set(compact('servicios'));
         $this->set('_serialize', ['servicios']);
     }
+    
+    /**
+     * todos method
+     *
+     * @return \Cake\Http\Response|void
+     */
+    public function todos()
+    {
+        $this->paginate = [
+            'contain' => ['Categorias']
+        ];
+        $servicios = $this->paginate($this->Servicios);
 
+        $this->set(compact('servicios'));
+        $this->set('_serialize', ['servicios']);
+    }
     /**
      * View method
      *

@@ -35,7 +35,7 @@ class RolsTable extends Table
         parent::initialize($config);
 
         $this->setTable('rols');
-        $this->setDisplayField('id');
+        $this->setDisplayField('nombre');
         $this->setPrimaryKey('id');
 
         $this->addBehavior('Timestamp');

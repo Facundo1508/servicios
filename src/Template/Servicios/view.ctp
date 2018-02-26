@@ -18,8 +18,8 @@ $this->end();
 $this->start('tb_sidebar');
 ?>
 <ul class="nav nav-sidebar">
-<li><?= $this->Html->link(__('Editar Servicio'), ['action' => 'edit', $servicio->id]) ?> </li>
-<li><?= $this->Form->postLink(__('Borrar Servicio'), ['action' => 'delete', $servicio->id], ['confirm' => __('Are you sure you want to delete # {0}?', $servicio->id)]) ?> </li>
+<li><?= $this->Html->link(__('Editar Servicio'), ['action' => 'edit', $servicio->nombre]) ?> </li>
+<li><?= $this->Form->postLink(__('Borrar Servicio'), ['action' => 'delete', $servicio->nombre], ['confirm' => __('Esta seguro que desea borrar {0}?', $servicio->nombre)]) ?> </li>
 <li><?= $this->Html->link(__('Lista de Servicios'), ['action' => 'index']) ?> </li>
 <li><?= $this->Html->link(__('Nuevo Servicio'), ['action' => 'add']) ?> </li>
 <li><?= $this->Html->link(__('Lista de Categorias'), ['controller' => 'Categorias', 'action' => 'index']) ?> </li>
@@ -33,27 +33,24 @@ $this->end();
 <div class="panel panel-default">
     <!-- Panel header -->
     <div class="panel-heading">
-        <h3 class="panel-title"><?= h($servicio->id) ?></h3>
+        <h3 class="panel-title"><?= h($servicio->nombre) ?></h3>
     </div>
     <table class="table table-striped" cellpadding="0" cellspacing="0">
-        <tr>
-            <td><?= __('Id') ?></td>
-            <td><?= h($servicio->id) ?></td>
-        </tr>
+        
         <tr>
             <td><?= __('Nombre') ?></td>
             <td><?= h($servicio->nombre) ?></td>
         </tr>
         <tr>
             <td><?= __('Categoria') ?></td>
-            <td><?= $servicio->has('categoria') ? $this->Html->link($servicio->categoria->id, ['controller' => 'Categorias', 'action' => 'view', $servicio->categoria->id]) : '' ?></td>
+            <td><?= $servicio->has('categoria') ? $this->Html->link($servicio->categoria->nombre, ['controller' => 'Categorias', 'action' => 'view', $servicio->categoria->id]) : '' ?></td>
         </tr>
         <tr>
-            <td><?= __('Created') ?></td>
+            <td><?= __('Creado') ?></td>
             <td><?= h($servicio->created) ?></td>
         </tr>
         <tr>
-            <td><?= __('Modified') ?></td>
+            <td><?= __('Ultima modificación') ?></td>
             <td><?= h($servicio->modified) ?></td>
         </tr>
     </table>

@@ -20,7 +20,6 @@ $this->extend('../Layout/TwitterBootstrap/signin');
             echo $this->Form->control('email', ['label' => 'e-Mail']);
             echo $this->Form->control('username', ['label' => 'Nombre de usuario']);
             echo $this->Form->control('password', ['label' => 'Contraseña']);
-            echo $this->Form->control('rol_id', ['options' => $rols]);
             echo $this->Form->control('genero_id', ['options' => $generos]);
         ?>
     </fieldset>

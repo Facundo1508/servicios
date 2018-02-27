@@ -99,6 +99,8 @@ class UsersController extends AppController
             $user = $this->Users->patchEntity($user, $this->request->getData());    
             $user->rol_id = parent::ROL_USUARIO;
             $user->activo = 0;
+            $domicilio = $this->Users->Direccions->newEntity($this->request->getData());
+            $user->direccion = $domicilio;
             if ($this->Users->save($user)) {
                 $this->Flash->success(__('El usuario ha sido registrado correctamente. Está pendiente de activación.'));
 
@@ -106,6 +108,11 @@ class UsersController extends AppController
             }
             $this->Flash->error(__('El usuario no pudo ser registrado. Intente nuevamente'));
         }
+        $provincias = $this->Users->Direccions->Provincias->find('list', ['limit' => 200]);
+        $departamentos = $this->Users->Direccions->Departamentos->find('list', ['limit' => 200]);
+        $distritos = $this->Users->Direccions->Distritos->find('list', ['limit' => 200]);
+        $calles = $this->Users->Direccions->Calles->find('list', ['limit' => 200]);
+        $this->set(compact('direccion', 'provincias', 'departamentos', 'distritos', 'calles'));
         $rols = $this->Users->Rols->find('list', ['limit' => 200]);
         $generos = $this->Users->Generos->find('list', ['limit' => 200]);
         $this->set(compact('user', 'rols', 'generos'));

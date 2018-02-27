@@ -23,6 +23,17 @@ $this->extend('../Layout/TwitterBootstrap/signin');
             echo $this->Form->control('rol_id', ['options' => $rols]);
             echo $this->Form->control('genero_id', ['options' => $generos]);
         ?>
+        <legend><?= __('Add {0}', ['Direccion']) ?></legend>
+            <?php
+            echo $this->Form->control('provincia_id', ['options' => $provincias]);
+            echo $this->Form->control('departamento_id', ['options' => $departamentos]);
+            echo $this->Form->control('distrito_id', ['options' => $distritos]);
+            echo $this->Form->control('calle_id', ['options' => $calles]);
+            echo $this->Form->control('numero');
+            echo $this->Form->control('barrio');
+            echo $this->Form->control('manzana');
+            echo $this->Form->control('casa');
+            ?>
     </fieldset>
     <?= $this->Form->button(__('Registrarse')) ?>
     <?= $this->Form->end() ?>

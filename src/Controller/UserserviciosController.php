@@ -12,6 +12,22 @@ use App\Controller\AppController;
  */
 class UserserviciosController extends AppController
 {
+    
+    public function isAuthorized($user)
+    {
+        //Valida si el usuario logueado tiene el rol de usuario común.
+        //Constante ROL_USUARIO definida en APP Controller
+        if (isset($user['rol_id']) && $user['rol_id'] == parent::ROL_USUARIO)
+        {
+            if(in_array($this->request->action, ['index', 'add']))
+            {
+                return true;
+            }
+        } elseif (!isset($user['rol_id'])) {         
+            return false;
+        }
+        return parent::isAuthorized($user);
+    }
 
     /**
      * Index method
@@ -23,6 +39,12 @@ class UserserviciosController extends AppController
         $this->paginate = [
             'contain' => ['Users', 'Servicios']
         ];
+        if($this->Auth->user('rol_id')==parent::ROL_USUARIO){
+            $this->paginate['conditions'] = [
+                'user_id'=>$this->Auth->user('id')
+                
+            ];
+        }
         $userservicios = $this->paginate($this->Userservicios);
 
         $this->set(compact('userservicios'));
@@ -56,6 +78,8 @@ class UserserviciosController extends AppController
         $userservicio = $this->Userservicios->newEntity();
         if ($this->request->is('post')) {
             $userservicio = $this->Userservicios->patchEntity($userservicio, $this->request->getData());
+            if(empty($userservicio->user_id))
+                $userservicio->user_id=$this->Auth->user('id');
             if ($this->Userservicios->save($userservicio)) {
                 $this->Flash->success(__('The userservicio has been saved.'));
 

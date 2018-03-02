@@ -37,5 +37,15 @@ $this->end();
     echo $this->Form->control('categoria_id', ['options' => $categorias]);
     ?>
 </fieldset>
-<?= $this->Form->button(__("Add")); ?>
+<?= $this->Form->button(__("Publicar")); ?>
 <?= $this->Form->end() ?>
+    <div class="users form">
+        <?= $this->Html->link(
+    	__(' Publicar en Premium '), 
+    	['controller' => 'Servicios', 'action' => 'premium'], 
+    	['class' => 'btn btn-primary']
+    	) 
+        
+        ?>
+    <?= $this->Form->end() ?>
+    </div>

@@ -6,6 +6,7 @@ use Cake\ORM\Entity;
 /**
  * Userservicio Entity
  *
+ * @property string $id
  * @property string $user_id
  * @property string $servicio_id
  *
@@ -26,6 +27,7 @@ class Userservicio extends Entity
      */
     protected $_accessible = [
         'user_id' => true,
+        'servicio_id' => true,
         'user' => true,
         'servicio' => true
     ];

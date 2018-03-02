@@ -24,7 +24,7 @@ class ServiciosController extends AppController
         //Constante ROL_USUARIO definida en APP Controller
         if (isset($user['rol_id']) && $user['rol_id'] == parent::ROL_USUARIO)
         {
-            if(in_array($this->request->action, ['index']))
+            if(in_array($this->request->action, ['index', 'add', 'premium']))
             {
                 return true;
             }
@@ -82,6 +82,30 @@ class ServiciosController extends AppController
         $this->set('_serialize', ['servicio']);
     }
 
+    
+    /**
+     * Premium method
+     *
+     * @return \Cake\Http\Response|null Redirects on successful add, renders view otherwise.
+     */
+    public function premium()
+    {
+        $servicio = $this->Servicios->newEntity();
+        if ($this->request->is('post')) {
+            $servicio = $this->Servicios->patchEntity($servicio, $this->request->getData());
+            if ($this->Servicios->save($servicio)) {
+                $this->Flash->success(__('Se ha publicado tu servicio, un administrador te contactara para hacerlo premium.'));
+
+                return $this->redirect(['action' => 'index']);
+            }
+            $this->Flash->error(__('El servicio no se ha publicado, por favor intenta nuevamente.'));
+        }
+        $categorias = $this->Servicios->Categorias->find('list', ['limit' => 200]);
+        $this->set(compact('servicio', 'categorias'));
+        $this->set('_serialize', ['servicio']);
+    }
+    
+    
     /**
      * Add method
      *

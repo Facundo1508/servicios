@@ -37,6 +37,10 @@ $this->end();
     </div>
     <table class="table table-striped" cellpadding="0" cellspacing="0">
         <tr>
+            <td><?= __('Id') ?></td>
+            <td><?= h($userservicio->id) ?></td>
+        </tr>
+        <tr>
             <td><?= __('User') ?></td>
             <td><?= $userservicio->has('user') ? $this->Html->link($userservicio->user->id, ['controller' => 'Users', 'action' => 'view', $userservicio->user->id]) : '' ?></td>
         </tr>

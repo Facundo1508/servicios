@@ -35,7 +35,7 @@ class UserserviciosTable extends Table
 
         $this->setTable('userservicios');
         $this->setDisplayField('servicio_id');
-        $this->setPrimaryKey('servicio_id');
+        $this->setPrimaryKey('id');
 
         $this->belongsTo('Users', [
             'foreignKey' => 'user_id',
@@ -45,6 +45,21 @@ class UserserviciosTable extends Table
             'foreignKey' => 'servicio_id',
             'joinType' => 'INNER'
         ]);
+    }
+
+    /**
+     * Default validation rules.
+     *
+     * @param \Cake\Validation\Validator $validator Validator instance.
+     * @return \Cake\Validation\Validator
+     */
+    public function validationDefault(Validator $validator)
+    {
+        $validator
+            ->uuid('id')
+            ->allowEmpty('id', 'create');
+
+        return $validator;
     }
 
     /**

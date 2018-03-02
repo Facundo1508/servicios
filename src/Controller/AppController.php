@@ -73,6 +73,8 @@ class AppController extends Controller
     {   
         if (isset($this->Auth))
             $this->set('current_user', $this->Auth->user());
+        $this->set("rol_usuario", self::ROL_USUARIO);
+        $this->set("rol_admin", self::ROL_ADMIN);
     }
     
     /**

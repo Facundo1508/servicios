@@ -49,6 +49,7 @@ $this->end();
 <fieldset>
     <legend><?= __('Edit {0}', ['Userservicio']) ?></legend>
     <?php
+    echo $this->Form->control('id');
     echo $this->Form->control('user_id', ['options' => $users]);
     ?>
 </fieldset>

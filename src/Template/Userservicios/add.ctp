@@ -33,6 +33,8 @@ $this->end();
 <fieldset>
     <legend><?= __('Add {0}', ['Userservicio']) ?></legend>
     <?php
+    echo $this->Form->control('servicio_id', ['options' => $servicios]);
+    if($current_user['rol_id'] == $rol_admin)
     echo $this->Form->control('user_id', ['options' => $users]);
     ?>
 </fieldset>

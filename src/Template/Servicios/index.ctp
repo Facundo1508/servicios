@@ -5,18 +5,21 @@ $this->start('tb_actions');
 ?>
 
 
-
-if(isset($user['rol_id']) && $user['rol_id'] == parent::ROL_ADMIN){
-      
+<?php
+if(isset($current_user['rol_id']) && $current_user['rol_id'] == $rol_admin){
+?>      
       <li><?=$this->Html->link(__('Nuevo Servicio'), ['action' => 'add']);?></li>
       <li><?=$this->Html->link(__('Lista de Categorias'), ['controller' => 'Categorias', 'action' => 'index']);?></li>
       <li><?=$this->Html->link(__('Nueva Categoria'), ['controller' => 'Categorias', 'action' => 'add']);?></li>
       <li><?=$this->Html->link(__('Lista de Userservicio'), ['controller' => 'Userservicios', 'action' => 'index']);?></li>
-} elseif (isset($user['rol_id']) && $user['rol_id'] == parent::ROL_USUARIO) {
+<?php      
+} elseif (isset($current_user['rol_id']) && $current_user['rol_id'] == $rol_usuario) {
+?>
       
     <li><?=$this->Html->link(__('Nuevo Servicio'), ['action' => 'add']);?></li>
+<?php
 }
-
+?>
 
     
 <?php $this->end(); ?>

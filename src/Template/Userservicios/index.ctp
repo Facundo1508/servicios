@@ -14,6 +14,7 @@ $this->start('tb_actions');
 <table class="table table-striped" cellpadding="0" cellspacing="0">
     <thead>
         <tr>
+            <th><?= $this->Paginator->sort('id'); ?></th>
             <th><?= $this->Paginator->sort('user_id'); ?></th>
             <th><?= $this->Paginator->sort('servicio_id'); ?></th>
             <th class="actions"><?= __('Actions'); ?></th>
@@ -22,6 +23,7 @@ $this->start('tb_actions');
     <tbody>
         <?php foreach ($userservicios as $userservicio): ?>
         <tr>
+            <td><?= h($userservicio->id) ?></td>
             <td>
                 <?= $userservicio->has('user') ? $this->Html->link($userservicio->user->id, ['controller' => 'Users', 'action' => 'view', $userservicio->user->id]) : '' ?>
             </td>

@@ -35,7 +35,7 @@ class DistritosTable extends Table
         parent::initialize($config);
 
         $this->setTable('distritos');
-        $this->setDisplayField('id');
+        $this->setDisplayField('nombre');
         $this->setPrimaryKey('id');
 
         $this->addBehavior('Timestamp');

@@ -35,7 +35,7 @@ class CallesTable extends Table
         parent::initialize($config);
 
         $this->setTable('calles');
-        $this->setDisplayField('id');
+        $this->setDisplayField('nombre');
         $this->setPrimaryKey('id');
 
         $this->addBehavior('Timestamp');

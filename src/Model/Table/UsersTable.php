@@ -50,6 +50,12 @@ class UsersTable extends Table
             'foreignKey' => 'genero_id',
             'joinType' => 'INNER'
         ]);
+        
+        $this->belongsTo('Direccions', [
+            'foreignKey' => 'direccion_id',
+            'joinType' => 'INNER'
+        ]);
+        
         $this->hasMany('Userservicios', [
             'foreignKey' => 'user_id'
         ]);
@@ -118,6 +124,7 @@ class UsersTable extends Table
         $rules->add($rules->isUnique(['username']));
         $rules->add($rules->existsIn(['rol_id'], 'Rols'));
         $rules->add($rules->existsIn(['genero_id'], 'Generos'));
+        $rules->add($rules->existsIn(['direccion_id'], 'Direccions'));
 
         return $rules;
     }

@@ -57,9 +57,9 @@ if(isset($current_user['rol_id']) && $current_user['rol_id'] == $rol_admin){
 </table>
 <div class="paginator">
     <ul class="pagination">
-        <?= $this->Paginator->prev('< ' . __('previous')) ?>
+        <?= $this->Paginator->prev('< ' . __('Anterior')) ?>
         <?= $this->Paginator->numbers(['before' => '', 'after' => '']) ?>
-        <?= $this->Paginator->next(__('next') . ' >') ?>
+        <?= $this->Paginator->next(__('Siguiente') . ' >') ?>
     </ul>
     <p><?= $this->Paginator->counter() ?></p>
 </div>

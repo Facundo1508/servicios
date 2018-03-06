@@ -29,6 +29,25 @@ class UserserviciosController extends AppController
         return parent::isAuthorized($user);
     }
 
+    
+    /**
+     * Index method
+     *
+     * @return \Cake\Http\Response|void
+     */
+    public function todos()
+    {
+        $this->paginate = [
+            'contain' => ['Users', 'Servicios']
+        ];
+        
+        $userservicios = $this->paginate($this->Userservicios);
+
+        $this->set(compact('userservicios'));
+        $this->set('_serialize', ['userservicios']);
+    }
+    
+    
     /**
      * Index method
      *

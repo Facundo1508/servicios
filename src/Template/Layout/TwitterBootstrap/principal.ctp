@@ -20,8 +20,8 @@
                         <li class="menu__item"><a class="menu__link select" href="">Inicio</a></li>
                         <li class="menu__item"><a class="menu__link" <?= $this->Html->link(__('Acceder'), ['controller' => 'Users', 'action' => 'login'], ['class' => 'btn btn-default']) ?></a></li>
                         <li class="menu__item"><a class="menu__link" <?= $this->Html->link(__('Registrarse'), ['controller' => 'Users', 'action' => 'registro'], ['class' => 'btn btn-default']) ?></a></li>
-                        <li class="menu__item"><a class="menu__link" <?= $this->Html->link(__('Todos los servicios'), ['controller' => 'Servicios', 'action' => 'todos'], ['class' => 'btn btn-default']) ?></a></li>
-                        <li class="menu__item"><a class="menu__link" <?= $this->Html->link(__('Servicios'), ['controller' => 'Servicios', 'action' => 'index'], ['class' => 'btn btn-default']) ?></a></li>
+                        <li class="menu__item"><a class="menu__link" <?= $this->Html->link(__('Todos los servicios'), ['controller' => 'Userservicios', 'action' => 'todos'], ['class' => 'btn btn-default']) ?></a></li>
+                        <li class="menu__item"><a class="menu__link" <?= $this->Html->link(__('Mis Servicios'), ['controller' => 'Userservicios', 'action' => 'index'], ['class' => 'btn btn-default']) ?></a></li>
                         <li class="menu__item"><a class="menu__link" <?= $this->Html->link(__('Contacto'), ['controller' => 'Pages', 'action' => 'display', 'contacto'], ['class' => 'btn btn-default']) ?></a></li>
                     </ul>
                 </nav>

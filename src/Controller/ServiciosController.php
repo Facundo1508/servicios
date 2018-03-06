@@ -24,7 +24,7 @@ class ServiciosController extends AppController
         //Constante ROL_USUARIO definida en APP Controller
         if (isset($user['rol_id']) && $user['rol_id'] == parent::ROL_USUARIO)
         {
-            if(in_array($this->request->action, ['index', 'add', 'premium']))
+            if(in_array($this->request->action, ['premium']))
             {
                 return true;
             }

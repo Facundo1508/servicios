@@ -19,7 +19,7 @@ class UserserviciosController extends AppController
         //Constante ROL_USUARIO definida en APP Controller
         if (isset($user['rol_id']) && $user['rol_id'] == parent::ROL_USUARIO)
         {
-            if(in_array($this->request->action, ['index', 'add']))
+            if(in_array($this->request->action, ['index', 'add','todos','premium','edit','view','delete']))
             {
                 return true;
             }
@@ -113,6 +113,31 @@ class UserserviciosController extends AppController
     }
 
     /**
+     * Add method
+     *
+     * @return \Cake\Http\Response|null Redirects on successful add, renders view otherwise.
+     */
+    public function premium()
+    {
+        $userservicio = $this->Userservicios->newEntity();
+        if ($this->request->is('post')) {
+            $userservicio = $this->Userservicios->patchEntity($userservicio, $this->request->getData());
+            if(empty($userservicio->user_id))
+                $userservicio->user_id=$this->Auth->user('id');
+            if ($this->Userservicios->save($userservicio)) {
+                $this->Flash->success(__('Se publico tu servicio. Un administrador se contactara contigo.'));
+
+                return $this->redirect(['action' => 'index']);
+            }
+            $this->Flash->error(__('No ha sido guardado el servicio. Porfavor, intente nuevamente.'));
+        }
+        $users = $this->Userservicios->Users->find('list', ['limit' => 200]);
+        $servicios = $this->Userservicios->Servicios->find('list', ['limit' => 200]);
+        $this->set(compact('userservicio', 'users', 'servicios'));
+        $this->set('_serialize', ['userservicio']);
+    }
+    
+    /**
      * Edit method
      *
      * @param string|null $id Userservicio id.
@@ -127,11 +152,11 @@ class UserserviciosController extends AppController
         if ($this->request->is(['patch', 'post', 'put'])) {
             $userservicio = $this->Userservicios->patchEntity($userservicio, $this->request->getData());
             if ($this->Userservicios->save($userservicio)) {
-                $this->Flash->success(__('The userservicio has been saved.'));
+                $this->Flash->success(__('El servicio ha sido guardado.'));
 
                 return $this->redirect(['action' => 'index']);
             }
-            $this->Flash->error(__('The userservicio could not be saved. Please, try again.'));
+            $this->Flash->error(__('No se ha guardado el servicio. Porfavor, intente nuevamente.'));
         }
         $users = $this->Userservicios->Users->find('list', ['limit' => 200]);
         $servicios = $this->Userservicios->Servicios->find('list', ['limit' => 200]);
@@ -151,9 +176,9 @@ class UserserviciosController extends AppController
         $this->request->allowMethod(['post', 'delete']);
         $userservicio = $this->Userservicios->get($id);
         if ($this->Userservicios->delete($userservicio)) {
-            $this->Flash->success(__('The userservicio has been deleted.'));
+            $this->Flash->success(__('El servicio ha sido eliminado.'));
         } else {
-            $this->Flash->error(__('The userservicio could not be deleted. Please, try again.'));
+            $this->Flash->error(__('No se ha podido borrar el servicio. Porfavor, intente nuevamente.'));
         }
 
         return $this->redirect(['action' => 'index']);

@@ -43,3 +43,19 @@ $this->start('tb_actions');
     </ul>
     <p><?= $this->Paginator->counter() ?></p>
 </div>
+    <div class="userform">
+        <?= $this->Html->link(
+    	__('Atras'), 
+    	['controller' => 'Userservicios', 'action' => 'index'], 
+    	['class' => 'btn btn-default']
+    	) ?>
+    <?= $this->Form->end() ?>
+    </div>
+    <div class="userform">
+        <?= $this->Html->link(
+    	__('Volver a la página principal'), 
+    	['controller' => 'Pages', 'action' => 'display', 'home'], 
+    	['class' => 'btn btn-primary']
+    	) ?>
+    <?= $this->Form->end() ?>
+    </div>

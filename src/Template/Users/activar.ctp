@@ -34,6 +34,7 @@ $this->start('tb_actions');
                     'title' => __('Activar'), 
                     'class' => 'btn btn-default glyphicon glyphicon-ok']) 
                     ?>
+                <?= $this->Form->postLink('', ['action' => 'delete', $user->id], ['confirm' => __('Seguro que desea no activar a {0}?', $user->username), 'title' => __('No activar'), 'class' => 'btn btn-default glyphicon glyphicon-remove']) ?>
             </td>
         </tr>
         <?php endforeach; ?>

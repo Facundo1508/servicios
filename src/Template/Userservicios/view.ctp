@@ -24,6 +24,9 @@ if(isset($current_user['rol_id']) && $current_user['rol_id'] == $rol_admin){
     <li><?= $this->Html->link(__('Nuevo Servicio'), ['action' => 'add']); ?></li>
     <li><?= $this->Html->link(__('Lista de Usuarios'), ['controller' => 'Users', 'action' => 'index']); ?></li>
     <li><?= $this->Html->link(__('Nuevo Usuario'), ['controller' => 'Users', 'action' => 'add']); ?></li>
+    <li><?= $this->Html->link(__('Lista de Servicios'), ['controller' => 'Userservicios', 'action' => 'todos']); ?></li>
+    <li><?= $this->Html->link(__('Nuevo Servicio'), ['controller' => 'Userservicios', 'action' => 'add']); ?></li>
+    <li><?= $this->Html->link(__('Nuevo PREMIUM'), ['controller' => 'Userservicios', 'action' => 'premium']); ?></li>
 <?php      
 } elseif (isset($current_user['rol_id']) && $current_user['rol_id'] == $rol_usuario) {
 ?>
@@ -40,13 +43,10 @@ $this->end();
 <div class="panel panel-default">
     <!-- Panel header -->
     <div class="panel-heading">
-        <h3 class="panel-title"><?= h($userservicio->servicio_id) ?></h3>
+        <h3 class="panel-title"><?= h($userservicio->servicio->nombre) ?></h3>
     </div>
     <table class="table table-striped" cellpadding="0" cellspacing="0">
-        <tr>
-            <td><?= __('Id') ?></td>
-            <td><?= h($userservicio->id) ?></td>
-        </tr>
+       
         <tr>
             <td><?= __('User') ?></td>
             <td><?= $userservicio->has('user') ? $this->Html->link($userservicio->user->nombre, ['controller' => 'Users', 'action' => 'view', $userservicio->user->id]) : '' ?></td>

@@ -10,6 +10,9 @@ if(isset($current_user['rol_id']) && $current_user['rol_id'] == $rol_admin){
     <li><?= $this->Html->link(__('Nuevo Servicio'), ['action' => 'add']); ?></li>
     <li><?= $this->Html->link(__('Lista de Usuarios'), ['controller' => 'Users', 'action' => 'index']); ?></li>
     <li><?= $this->Html->link(__('Nuevo Usuario'), ['controller' => 'Users', 'action' => 'add']); ?></li>
+    <li><?= $this->Html->link(__('Lista de Servicios'), ['controller' => 'Userservicios', 'action' => 'todos']); ?></li>
+    <li><?= $this->Html->link(__('Nuevo Servicio'), ['controller' => 'Userservicios', 'action' => 'add']); ?></li>
+    <li><?= $this->Html->link(__('Nuevo PREMIUM'), ['controller' => 'Userservicios', 'action' => 'premium']); ?></li>
 <?php      
 } elseif (isset($current_user['rol_id']) && $current_user['rol_id'] == $rol_usuario) {
 ?>
@@ -45,9 +48,9 @@ if(isset($current_user['rol_id']) && $current_user['rol_id'] == $rol_admin){
             </td>
            
             <td class="actions">
-                <?= $this->Html->link('', ['action' => 'view', $userservicio->servicio_id], ['title' => __('View'), 'class' => 'btn btn-default glyphicon glyphicon-eye-open']) ?>
-                <?= $this->Html->link('', ['action' => 'edit', $userservicio->servicio_id], ['title' => __('Edit'), 'class' => 'btn btn-default glyphicon glyphicon-pencil']) ?>
-                <?= $this->Form->postLink('', ['action' => 'delete', $userservicio->servicio_id], ['confirm' => __('Está seguro que desea eliminar {0}?', $userservicio->servicio_id), 'title' => __('Delete'), 'class' => 'btn btn-default glyphicon glyphicon-trash']) ?>
+                <?= $this->Html->link('', ['action' => 'view', $userservicio->id], ['title' => __('View'), 'class' => 'btn btn-default glyphicon glyphicon-eye-open']) ?>
+                <?= $this->Html->link('', ['action' => 'edit', $userservicio->id], ['title' => __('Edit'), 'class' => 'btn btn-default glyphicon glyphicon-pencil']) ?>
+                <?= $this->Form->postLink('', ['action' => 'delete', $userservicio->id], ['confirm' => __('Está seguro que desea eliminar {0}?', $userservicio->servicio_id), 'title' => __('Delete'), 'class' => 'btn btn-default glyphicon glyphicon-trash']) ?>
             </td>
         </tr>
         <?php endforeach; ?>

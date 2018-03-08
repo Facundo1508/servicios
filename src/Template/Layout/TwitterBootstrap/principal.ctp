@@ -41,7 +41,7 @@
                     <article class="info__columna">
                         <img src="webroot/img/principal/corona.jpg" alt="" class="info__img">
                         <h2 class="info__titulo">Hazte notar</h2>
-                        <p class="info__txt">¡Conviértete en premium para salir en este apartado!</p>
+                        <p class="info__txt" >¡Conviértete en premium para salir en este apartado!</p>
                     </article>
                     <article class="info__columna">
                         <img src="webroot/img/principal/corona.jpg" alt="" class="info__img">

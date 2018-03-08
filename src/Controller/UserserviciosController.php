@@ -31,7 +31,7 @@ class UserserviciosController extends AppController
 
     
     /**
-     * Index method
+     * todos method
      *
      * @return \Cake\Http\Response|void
      */
@@ -70,6 +70,9 @@ class UserserviciosController extends AppController
         $this->set('_serialize', ['userservicios']);
     }
 
+    
+     
+    
     /**
      * View method
      *

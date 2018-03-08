@@ -40,7 +40,7 @@ class AppController extends Controller
 
     const ROL_ADMIN = 1;
     const ROL_USUARIO = 2; //Agregado para comparar usuarios comunes (mediante rol_id)
-
+    
     public function initialize()
     {
         parent::initialize();
@@ -54,7 +54,7 @@ class AppController extends Controller
             ],
             'logoutRedirect' => [
                 'controller' => 'Users',
-                'action' => 'login' //borré home porque no se a qué hacía referencia y rompía la redirección
+                'action' => 'login' 
             ]
         ]);
     }
@@ -72,7 +72,7 @@ class AppController extends Controller
     public function beforeFilter(Event $event)
     {   
         if (isset($this->Auth))
-            $this->set('current_user', $this->Auth->user());
+        $this->set('current_user', $this->Auth->user());
         $this->set("rol_usuario", self::ROL_USUARIO);
         $this->set("rol_admin", self::ROL_ADMIN);
     }

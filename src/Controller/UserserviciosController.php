@@ -2,6 +2,7 @@
 namespace App\Controller;
 
 use App\Controller\AppController;
+use Cake\Event\Event;
 
 /**
  * Userservicios Controller
@@ -29,6 +30,11 @@ class UserserviciosController extends AppController
         return parent::isAuthorized($user);
     }
 
+    public function beforeFilter(Event $event)
+    {
+        parent::beforeFilter($event);
+        $this->Auth->allow(['todos']);
+    }
     
     /**
      * todos method

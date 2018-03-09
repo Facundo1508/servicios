@@ -265,3 +265,15 @@ h1, h2, h3, h4, h5, h6 {
     margin-top: -220px;
   }
 }
+
+/*---------------Estilos del formulario---------------*/
+.contacto {
+    /* Sólo para centrar el formulario a la página */
+    margin: 0 auto;
+    width: 400px;
+    /* Para ver el borde del formulario */
+    padding: 1em;
+    border: 1px solid #CCC;
+    border-radius: 1em;
+}
+
